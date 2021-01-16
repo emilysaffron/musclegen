@@ -1,12 +1,4 @@
-import Button from "../Components/Buttons";
-import styled from "@emotion/styled";
-
-const StyledButtons = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
+import Menu from "../Components/Menu";
 
 const HomePage = () => {
   const clicked = () => {
@@ -14,12 +6,10 @@ const HomePage = () => {
   };
 
   return (
-    <StyledButtons>
-      <Button label="New Workout" onClick={clicked} />
-      <Button label="Past Workouts" onClick={clicked} />
-      <Button label="Exercises" onClick={clicked} />
-      <Button label="Links" onClick={clicked} />
-    </StyledButtons>
+    <Menu
+      labels={["New Workout", "Past Workouts", "Exercises", "Links"]}
+      onClick={clicked}
+    />
   );
 };
 
