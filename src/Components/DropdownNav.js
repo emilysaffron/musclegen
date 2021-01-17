@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
-import NavLinks from "../Helpers/NavLinks";
+import NavLinks from "./NavLinks";
 import Fade from "@material-ui/core/Fade";
 
 const DropDownNav = () => {
