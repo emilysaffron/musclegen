@@ -1,7 +1,8 @@
-import HomePage from "./Pages/HomePage";
 
+import createRoutes from "./Helpers/FetchRoutes";
 function App() {
-  return <HomePage />;
+  const routes = createRoutes();
+  return routes;
 }
 
 export default App;

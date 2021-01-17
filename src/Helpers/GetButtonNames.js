@@ -4,7 +4,6 @@ const GetButtonNames = (labels, onClick) => {
   let buttons = [];
 
   for (let i = 0; i < labels.length; i++) {
-    console.log(labels[i]);
     buttons.push(<Button label={labels[i]} onClick={onClick} />);
   }
 
