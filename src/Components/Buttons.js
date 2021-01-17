@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-
+import { Link } from "@reach/router";
 const StyledButton = styled.button`
   border-radius: 20px;
   background: #d1c5cb;
@@ -16,7 +16,11 @@ const StyledButton = styled.button`
 `;
 
 const Button = ({ label, onClick }) => {
-  return <StyledButton onClick={onClick}>{label}</StyledButton>;
+  return (
+    <Link to={`${label}`}>
+      <StyledButton onClick={onClick}>{label}</StyledButton>;
+    </Link>
+  );
 };
 
 export default Button;
