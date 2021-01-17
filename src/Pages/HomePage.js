@@ -1,10 +1,6 @@
 import Menu from "../Components/Menu";
-
+import clicked from "../Helpers/ButtonClick";
 const HomePage = () => {
-  const clicked = () => {
-    console.log("yep");
-  };
-
   return (
     <Menu
       labels={["New Workout", "Past Workouts", "Exercises", "Links"]}
