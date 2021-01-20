@@ -1,0 +1,448 @@
+{
+    "body": [
+      {
+        "type": "upper",
+        "model": {
+          "name": "Reverse Grip Lat Pulldown",
+          "target": "Outer Back"
+        }
+      }  
+      ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Kneeling Back Row",
+          "target": "Outer Back"
+        }
+      } 
+      ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Seated Back Row",
+          "target": "Outer Back"
+        }
+      }    ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Kneeling One Arm Back Row",
+          "target": "Outer Back"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Chest Fly",
+          "target": "Middle Chest"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Standard Push Up",
+          "target": "Middle Chest"
+        }
+      }     ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Standing Chest Press",
+          "target": "Upper Chest"
+        }
+      }     ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Door Push Up",
+          "target": "Middle Chest"
+        }
+      }     ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Standing Incline Chest Press",
+          "target": "Chest"
+        }
+      }     ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Lying Decline Chest Press",
+          "target": "Chest"
+        }
+      }     ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Staggered Hand Push Ups",
+          "target": "Chest"
+        }
+      }     ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Wide Stance Single Arm Low Pushover",
+          "target": "Chest"
+        }
+      }     ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Standing High Cable Crossover",
+          "target": "Chest"
+        }
+      }     ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Close Arm Band Push Ups",
+          "target": "Chest"
+        }
+      }     ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Seated High Row",
+          "target": "Rear Shoulder"
+        }
+      }  ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Standing Front Shoulder Raise",
+          "target": "Front Shoulder"
+        }
+      }  ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Standing Lateral Shoulder Raise",
+          "target": "Side Shoulder"
+        }
+      }  ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Lying Front Shoulder Raise",
+          "target": "Front Shoulder"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Sit Ups",
+          "target": "Middle Abs"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Lying Oblique Crunch",
+          "target": "Side Abs"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "High Low Chops",
+          "target": "Side Abs"
+        }
+      }    ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Bicycle Crunches",
+          "target": "Side Abs"
+        }
+      }     ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Get Ups",
+          "target": "Middle Abs"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Crunches",
+          "target": "Abs"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Side Plank Crunches",
+          "target": "Abs"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Leg Lift to Toe Touch",
+          "target": "Abs"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Standing Side Bends",
+          "target": "Abs"
+        }
+      }   , 
+      {
+        "type": "upper",
+        "model": {
+          "name": "Spiderman Crunches",
+          "target": "Abs"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Flutter Kicks",
+          "target": "Abs"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Sitting Crunches",
+          "target": "Abs"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Crunch to Knee Crunch",
+          "target": "Abs"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Half Moons",
+          "target": "Abs"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Spiderman Crunches",
+          "target": "Abs"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Drag Curls",
+          "target": "Biceps"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Close Curls",
+          "target": "Biceps"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Concentration Curls",
+          "target": "Biceps"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Seated Hammer Curls",
+          "target": "Biceps"
+        }
+      }   ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Tricep Kickbacks",
+          "target": "Triceps"
+        }
+      }    ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Overhead Tricep Extensions",
+          "target": "Triceps"
+        }
+      }    ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Skull Crushers",
+          "target": "Triceps"
+        }
+      }    ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Tricep Push Outs",
+          "target": "Triceps"
+        }
+      }    ,
+      
+      {
+        "type": "upper",
+        "model": {
+          "name": "Cobra Pushups",
+          "target": "Triceps"
+        }
+      }    ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Wide Stance Shrugs",
+          "target": "Back"
+        }
+      }    ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Y-Raise",
+          "target": "Back"
+        }
+      }    ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Seated W-Rows",
+          "target": "Back"
+        }
+      }    ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Reverse Flyes",
+          "target": "Back"
+        }
+      }    ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Seated Face Pulls",
+          "target": "Back"
+        }
+      }    ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Seated Neutral Row",
+          "target": "Back"
+        }
+      }    ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Seated Wide Row",
+          "target": "Back"
+        }
+      }    ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Seated Reverse Grip Row",
+          "target": "Back"
+        }
+      }    ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Seated Pull Backs",
+          "target": "Back"
+        }
+      }    ,
+      {
+        "type": "upper",
+        "model": {
+          "name": "Good Mornings",
+          "target": "Back"
+        }
+      }    ,
+      {
+        "type": "lower",
+        "model": {
+          "name": "Hex Squats",
+          "target": "Legs"
+        }
+      }   ,
+      {
+        "type": "lower",
+        "model": {
+          "name": "RDL's",
+          "target": "Legs"
+        }
+      }  ,
+      {
+        "type": "lower",
+        "model": {
+          "name": "Kick Backs",
+          "target": "Legs"
+        }
+      }  ,
+      {
+        "type": "lower",
+        "model": {
+          "name": "Lying Leg Extensions",
+          "target": "Legs"
+        }
+      }  ,
+      {
+        "type": "lower",
+        "model": {
+          "name": "Glute Bridge",
+          "target": "Glutes"
+        }
+      }  ,
+      {
+        "type": "lower",
+        "model": {
+          "name": "Hip Abductors",
+          "target": "Legs"
+        }
+      }  ,
+      {
+        "type": "lower",
+        "model": {
+          "name": "Lunge",
+          "target": "Legs"
+        }
+      }  ,
+      {
+        "type": "lower",
+        "model": {
+          "name": "Alt. Lateral Lunges",
+          "target": "Legs"
+        }
+      }  ,
+      {
+        "type": "lower",
+        "model": {
+          "name": "Back Squats",
+          "target": "Legs"
+        }
+      } ,
+      {
+        "type": "lower",
+        "model": {
+          "name": "Depth Squats",
+          "target": "Legs"
+        }
+      }   ,
+      {
+        "type": "lower",
+        "model": {
+          "name": "In and Out",
+          "target": "Legs"
+        }
+      }  
+    ]
+  }
