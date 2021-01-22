@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Link } from "@reach/router";
 const StyledButton = styled.button`
   border-radius: 20px;
-  background: #989898;
+  background: #a8bbce;
   width: 250px;
   height: 150px;
   padding: 20px;
