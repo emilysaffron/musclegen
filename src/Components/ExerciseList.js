@@ -4,10 +4,11 @@ const StyledList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 `;
 
-const ExerciseList = ({ exercises, toggleModal,modal }) => {
-  const names = GetExerciseNames(exercises, toggleModal,modal);
+const ExerciseList = ({ exercises, toggleModal, modal }) => {
+  const names = GetExerciseNames(exercises, toggleModal, modal);
 
   return <StyledList>{names}</StyledList>;
 };

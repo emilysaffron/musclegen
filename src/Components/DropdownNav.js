@@ -3,7 +3,13 @@ import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import NavLinks from "./NavLinks";
 import Fade from "@material-ui/core/Fade";
+import styled from "@emotion/styled";
 
+const StyledContainer = styled.div`
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
+`;
 const DropDownNav = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -17,7 +23,7 @@ const DropDownNav = () => {
   };
 
   return (
-    <div>
+    <StyledContainer>
       <Button
         aria-controls="fade-menu"
         aria-haspopup="true"
@@ -35,7 +41,7 @@ const DropDownNav = () => {
       >
         <NavLinks setAnchorEl={setAnchorEl} />
       </Menu>
-    </div>
+    </StyledContainer>
   );
 };
 

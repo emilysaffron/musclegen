@@ -12,6 +12,9 @@ const StyledPlan = styled.table`
   width: 385px;
   height: max-content;
   border: 2px solid black;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
 `;
 
 const StyledHeading = styled.th`
