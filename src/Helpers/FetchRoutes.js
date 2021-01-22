@@ -4,6 +4,7 @@ import HomePage from "../Pages/HomePage";
 import Links from "../Pages/Links";
 import NewWorkout from "../Pages/NewWorkout";
 import PastWorkouts from "../Pages/PastWorkouts";
+import WorkoutBuilder from "../Pages/WorkoutBuilder";
 const createRoutes = () => {
   return (
     <div>
@@ -23,6 +24,18 @@ const createRoutes = () => {
         <PastWorkouts exact path={"musclegen/PastWorkouts"} />
       </Router>
       <Router>
+        <WorkoutBuilder
+          path={"/musclegen/NewWorkout/UpperBody"}
+          label="UpperBody"
+        />
+      </Router>
+      <Router>
+        <WorkoutBuilder
+          path={"/musclegen/NewWorkout/LowerBody"}
+          label="LowerBody"
+        />
+      </Router>
+      <Router>
         <Redirect noThrow from="/" to={"/musclegen"} />
       </Router>
       <Router>
@@ -37,6 +50,20 @@ const createRoutes = () => {
           noThrow
           from="/musclegen/Past%20Workouts"
           to={"/musclegen/PastWorkouts"}
+        />
+      </Router>
+      <Router>
+        <Redirect
+          noThrow
+          from="/musclegen/NewWorkout/Upper%20Body"
+          to={"/musclegen/NewWorkout/UpperBody"}
+        />
+      </Router>{" "}
+      <Router>
+        <Redirect
+          noThrow
+          from="/musclegen/NewWorkout/Lower%20Body"
+          to={"/musclegen/NewWorkout/LowerBody"}
         />
       </Router>
     </div>

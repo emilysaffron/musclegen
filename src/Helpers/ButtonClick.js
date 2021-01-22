@@ -1,5 +1,5 @@
-const clicked = () => {
-  console.log("yep");
+const clicked = (label) => {
+  console.log(label);
 };
 
 export default clicked;
