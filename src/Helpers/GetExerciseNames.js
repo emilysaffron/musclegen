@@ -1,6 +1,6 @@
 import Exercise from "../Components/Exercise";
 
-const GetExerciseNames = (exercises) => {
+const GetExerciseNames = (exercises, toggleModal, modal) => {
   let names = [];
 
   for (let i = 0; i < exercises.length; i++) {
@@ -8,11 +8,12 @@ const GetExerciseNames = (exercises) => {
       <Exercise
         name={exercises[i].model.name}
         target={exercises[i].model.target}
+        toggleModal={toggleModal}
+        modal={modal}
       />
     );
   }
 
-  console.log("HERE " + names);
   return names;
 };
 

@@ -6,9 +6,9 @@ const StyledList = styled.div`
   align-items: center;
 `;
 
-const ExerciseList = ({ exercises }) => {
-  const names = GetExerciseNames(exercises);
-  console.log(names);
+const ExerciseList = ({ exercises, toggleModal,modal }) => {
+  const names = GetExerciseNames(exercises, toggleModal,modal);
+
   return <StyledList>{names}</StyledList>;
 };
 export default ExerciseList;

@@ -1,11 +1,29 @@
 import FetchBodyHalf from "../Helpers/FetchBodyHalf";
+import ExerciseModal from "../Components/ExerciseModal";
 import ConvertLabel from "../Helpers/ConvertLabel";
 import ExerciseList from "../Components/ExerciseList";
+import WorkoutPlan from "../Components/WorkoutPlan";
+import styled from "@emotion/styled";
+import { useState } from "react";
+const StyledPage = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 const WorkoutBuilder = ({ label }) => {
   const half = ConvertLabel(label);
 
   const filteredExercises = FetchBodyHalf(half);
-
-  return <ExerciseList exercises={filteredExercises} />;
+  const [modal, toggleModal] = useState(false);
+  return (
+    <StyledPage>
+      <ExerciseList
+        exercises={filteredExercises}
+        toggleModal={toggleModal}
+        modal={modal}
+      />
+      <WorkoutPlan label={label} />
+      <ExerciseModal modal={modal} />
+    </StyledPage>
+  );
 };
 export default WorkoutBuilder;

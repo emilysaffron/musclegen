@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-
-const StyledExercise = styled.div`
+import ToggleModal from "../Helpers/ToggleModal";
+const StyledExercise = styled.button`
   background: #a8bbce;
   display: flex;
   flex-direction: column;
@@ -11,11 +11,17 @@ const StyledExercise = styled.div`
   border-radius: 20px;
   width: 385px;
   height: 50px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
-const Exercise = ({ name, target }) => {
+const Exercise = ({ name, target, toggleModal, modal }) => {
+  const HandleClick = () => {
+    ToggleModal(toggleModal, modal);
+  };
   return (
-    <StyledExercise>
+    <StyledExercise onClick={HandleClick}>
       <div>{name}</div>
       <div>Target: {target}</div>
     </StyledExercise>
