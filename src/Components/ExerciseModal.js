@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-
+import RepCounter from "./RepCounter";
 const StyledModal = styled.div`
   width: 600px;
   height: 600px;
@@ -13,6 +13,11 @@ const StyledModal = styled.div`
 `;
 
 const ExerciseModal = ({ modal }) => {
-  return modal ? <StyledModal>HI</StyledModal> : null;
+  return modal ? (
+    <StyledModal>
+      HI
+      <RepCounter />
+    </StyledModal>
+  ) : null;
 };
 export default ExerciseModal;
