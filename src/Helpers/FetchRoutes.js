@@ -5,6 +5,7 @@ import Links from "../Pages/Links";
 import NewWorkout from "../Pages/NewWorkout";
 import PastWorkouts from "../Pages/PastWorkouts";
 import WorkoutBuilder from "../Pages/WorkoutBuilder";
+import Workout from "../Pages/Workout";
 const createRoutes = () => {
   return (
     <div>
@@ -36,6 +37,9 @@ const createRoutes = () => {
         />
       </Router>
       <Router>
+        <Workout path={"/musclegen/Workout"} />
+      </Router>
+      <Router>
         <Redirect noThrow from="/" to={"/musclegen"} />
       </Router>
       <Router>
@@ -64,6 +68,20 @@ const createRoutes = () => {
           noThrow
           from="/musclegen/NewWorkout/Lower%20Body"
           to={"/musclegen/NewWorkout/LowerBody"}
+        />
+      </Router>
+      <Router>
+        <Redirect
+          noThrow
+          from="/musclegen/NewWorkout/LowerBody/Workout"
+          to={"/musclegen/Workout"}
+        />
+      </Router>
+      <Router>
+        <Redirect
+          noThrow
+          from="/musclegen/NewWorkout/UpperBody/Workout"
+          to={"/musclegen/Workout"}
         />
       </Router>
     </div>

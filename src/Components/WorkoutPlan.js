@@ -1,5 +1,7 @@
 /* eslint-disable array-callback-return */
+import React from "react";
 import styled from "@emotion/styled";
+import { Link } from "@reach/router";
 
 const StyledPlan = styled.ul`
   background: #cea8bb;
@@ -34,17 +36,31 @@ const StyledHeading = styled.th`
   padding: 15px;
 `;
 
+const StartButton = styled.button`
+  width: 50px;
+  height: 25px;
+  border-radius: 50%;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 const WorkoutPlan = ({ label, workoutPlan }) => {
   return (
-    <StyledPlan>
-      <StyledHeading>{label} Plan</StyledHeading>
+    <div>
+      <StyledPlan>
+        <StyledHeading>{label} Plan</StyledHeading>
+        {workoutPlan.map((item) => {
+          if (item !== "") {
+            return <StyledItems>{item}</StyledItems>;
+          }
+        })}
 
-      {workoutPlan.map((item) => {
-        if (item !== "") {
-          return <StyledItems>{item}</StyledItems>;
-        }
-      })}
-    </StyledPlan>
+        <Link to={`Workout`}>
+          <StartButton> Start</StartButton>
+        </Link>
+      </StyledPlan>
+    </div>
   );
 };
 

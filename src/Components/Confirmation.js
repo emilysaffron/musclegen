@@ -27,12 +27,14 @@ const Confirmation = ({
   toggleModal,
   AddToWorkoutPlan,
   workoutPlan,
+ 
 }) => {
   const handleCancelClick = () => {
     ToggleModal(toggleModal, modal);
   };
   const handleConfirmClick = () => {
     AddExercise(exercise, repNumber, AddToWorkoutPlan, workoutPlan);
+   
     ToggleModal(toggleModal, modal);
   };
 

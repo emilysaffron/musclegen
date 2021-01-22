@@ -17,7 +17,7 @@ const WorkoutBuilder = ({ label }) => {
   const [modal, toggleModal] = useState(false);
   const [chosenExercise, updateChosenExercise] = useState("");
   const [workoutPlan, AddToWorkoutPlan] = useState(["", ""]);
-  console.log(workoutPlan[0]);
+
   return (
     <StyledPage>
       <ExerciseList
