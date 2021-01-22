@@ -1,6 +1,7 @@
+/* eslint-disable array-callback-return */
 import styled from "@emotion/styled";
 
-const StyledPlan = styled.table`
+const StyledPlan = styled.ul`
   background: #cea8bb;
   display: flex;
   flex-direction: column;
@@ -17,33 +18,32 @@ const StyledPlan = styled.table`
   top: 1rem;
 `;
 
+const StyledItems = styled.li`
+  list-style: none;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+`;
 const StyledHeading = styled.th`
   align-items: center;
   text-decoration: underline;
   padding: 15px;
 `;
 
-const StyledData = styled.td`
-  align-items: center;
-  padding: 15px;
-  width: min-content;
-  flex-wrap: wrap;
-`;
-const WorkoutPlan = ({ label }) => {
+const WorkoutPlan = ({ label, workoutPlan }) => {
   return (
     <StyledPlan>
-      <tr>
-        <StyledHeading>{label}</StyledHeading>
-      </tr>
+      <StyledHeading>{label} Plan</StyledHeading>
 
-      <tr>
-        <StyledData>Reverse Grip Lat Pulldown</StyledData>
-        <StyledData>10</StyledData>
-      </tr>
-      <tr>
-        <StyledData>Chest Fly</StyledData>
-        <StyledData>100</StyledData>
-      </tr>
+      {workoutPlan.map((item) => {
+        if (item !== "") {
+          return <StyledItems>{item}</StyledItems>;
+        }
+      })}
     </StyledPlan>
   );
 };

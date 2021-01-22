@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 import RepCounter from "./RepCounter";
+import Confirmation from "./Confirmation";
+import { useState } from "react";
 const StyledModal = styled.div`
   width: 600px;
   height: 600px;
@@ -10,13 +12,30 @@ const StyledModal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
-const ExerciseModal = ({ modal }) => {
+const ExerciseModal = ({
+  modal,
+  exercise,
+  toggleModal,
+  AddToWorkoutPlan,
+  workoutPlan,
+}) => {
+  const [repNumber, updateRepNumber] = useState(0);
   return modal ? (
     <StyledModal>
-      HI
-      <RepCounter />
+      {exercise}
+      <RepCounter repNumber={repNumber} updateRepNumber={updateRepNumber} />
+      <Confirmation
+        choice="cancel"
+        repNumber={repNumber}
+        exercise={exercise}
+        modal={modal}
+        toggleModal={toggleModal}
+        AddToWorkoutPlan={AddToWorkoutPlan}
+        workoutPlan={workoutPlan}
+      />
     </StyledModal>
   ) : null;
 };

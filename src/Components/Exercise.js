@@ -16,9 +16,16 @@ const StyledExercise = styled.button`
   }
 `;
 
-const Exercise = ({ name, target, toggleModal, modal }) => {
+const Exercise = ({
+  name,
+  target,
+  toggleModal,
+  modal,
+  updateChosenExercise,
+}) => {
   const HandleClick = () => {
     ToggleModal(toggleModal, modal);
+    updateChosenExercise(name);
   };
   return (
     <StyledExercise onClick={HandleClick}>

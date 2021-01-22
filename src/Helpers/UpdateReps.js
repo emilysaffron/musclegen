@@ -1,5 +1,4 @@
 const UpdateReps = (updateRepNumber, repNumber, operation) => {
-  console.log("before " + repNumber);
   if (operation === "plus") {
     updateRepNumber(repNumber + 1);
   }

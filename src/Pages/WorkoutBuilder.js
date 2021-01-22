@@ -9,20 +9,31 @@ const StyledPage = styled.div`
   display: flex;
   justify-content: center;
 `;
+
 const WorkoutBuilder = ({ label }) => {
   const half = ConvertLabel(label);
 
   const filteredExercises = FetchBodyHalf(half);
   const [modal, toggleModal] = useState(false);
+  const [chosenExercise, updateChosenExercise] = useState("");
+  const [workoutPlan, AddToWorkoutPlan] = useState(["", ""]);
+  console.log(workoutPlan[0]);
   return (
     <StyledPage>
       <ExerciseList
         exercises={filteredExercises}
         toggleModal={toggleModal}
         modal={modal}
+        updateChosenExercise={updateChosenExercise}
       />
-      <WorkoutPlan label={label} />
-      <ExerciseModal modal={modal} />
+      <ExerciseModal
+        modal={modal}
+        exercise={chosenExercise}
+        toggleModal={toggleModal}
+        AddToWorkoutPlan={AddToWorkoutPlan}
+        workoutPlan={workoutPlan}
+      />
+      <WorkoutPlan label={label} workoutPlan={workoutPlan} />
     </StyledPage>
   );
 };

@@ -1,6 +1,12 @@
 import Exercise from "../Components/Exercise";
 
-const GetExerciseNames = (exercises, toggleModal, modal) => {
+const GetExerciseNames = (
+  exercises,
+  toggleModal,
+  modal,
+  updateChosenExercise,
+  chosenExercise
+) => {
   let names = [];
 
   for (let i = 0; i < exercises.length; i++) {
@@ -10,6 +16,7 @@ const GetExerciseNames = (exercises, toggleModal, modal) => {
         target={exercises[i].model.target}
         toggleModal={toggleModal}
         modal={modal}
+        updateChosenExercise={updateChosenExercise}
       />
     );
   }
