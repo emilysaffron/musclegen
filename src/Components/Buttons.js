@@ -20,7 +20,7 @@ const StyledButton = styled.button`
 const Button = ({ label, onClick }) => {
   return (
     <Link to={`${label}`}>
-      <StyledButton onClick={onClick(label)}>{label}</StyledButton>;
+      <StyledButton>{label}</StyledButton>;
     </Link>
   );
 };

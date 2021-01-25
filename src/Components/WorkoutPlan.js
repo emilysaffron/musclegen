@@ -1,8 +1,9 @@
 /* eslint-disable array-callback-return */
 import React from "react";
 import styled from "@emotion/styled";
-import { Link } from "@reach/router";
 
+import StartStopButton from "./StartStopButton";
+import TempSavePlan from "../Helpers/TempSavePlan";
 const StyledPlan = styled.ul`
   background: #cea8bb;
   display: flex;
@@ -35,7 +36,6 @@ const StyledHeading = styled.th`
   text-decoration: underline;
   padding: 15px;
 `;
-
 const StartButton = styled.button`
   width: 50px;
   height: 25px;
@@ -56,9 +56,11 @@ const WorkoutPlan = ({ label, workoutPlan }) => {
           }
         })}
 
-        <Link to={`Workout`}>
-          <StartButton> Start</StartButton>
-        </Link>
+        <StartStopButton
+          control="start"
+          label={label}
+          onClick={TempSavePlan(workoutPlan)}
+        />
       </StyledPlan>
     </div>
   );
