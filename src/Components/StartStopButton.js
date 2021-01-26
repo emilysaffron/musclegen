@@ -11,9 +11,10 @@ const ControlButton = styled.button`
 `;
 
 const StartStopButton = ({ control, label, onClick }) => {
+  const labelWithoutWhitespace = label.replace(/\s+/g, "-");
   if (control === "start") {
     return (
-      <Link to={`Workout`}>
+      <Link to={`workout`}>
         <ControlButton onClick={onClick}> Start</ControlButton>
       </Link>
     );
@@ -21,7 +22,7 @@ const StartStopButton = ({ control, label, onClick }) => {
 
   if (control === "stop") {
     return (
-      <Link to={`${label}`}>
+      <Link to={`${labelWithoutWhitespace.toLowerCase()}`}>
         <ControlButton onClick={onClick}>Stop</ControlButton>
       </Link>
     );
