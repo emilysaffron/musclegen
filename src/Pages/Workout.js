@@ -8,7 +8,7 @@ import quit from "../quit.png";
 import React from "react";
 import { Link } from "@reach/router";
 
-const DisplayedExercise = styled.div`
+const Display = styled.div`
   background: #a8bbce;
   display: flex;
   flex-direction: column;
@@ -36,9 +36,6 @@ const StyledPage = styled.div`
   flex-direction: column;
 `;
 
-const StyledLink = styled(Link)`
-  align-self: baseline;
-`;
 const Quit = styled.div`
   width: 40px;
   align-self: baseline;
@@ -55,16 +52,18 @@ const Workout = ({ label }) => {
   const { currentPlan, setCurrentPlan } = useContext(CurrentPlanContext);
   const [currentExerciseNumber, switchCurrentExerciseNumber] = useState(0);
   const [maxExerciseNumber, updateMaxExerciseNumber] = useState(0);
-
+  const [filledPlan, updateFilledPlan] = useState(false);
   useEffect(() => {
     if (currentPlan) {
-      setCurrentPlan(MakeObjects(currentPlan, updateMaxExerciseNumber));
+      setCurrentPlan(
+        MakeObjects(currentPlan, updateMaxExerciseNumber, updateFilledPlan)
+      );
     }
   }, []);
 
-  return currentPlan ? (
+  return filledPlan ? (
     <StyledPage>
-      <DisplayedExercise>
+      <Display>
         <Quit>
           <Link to={`${labelWithoutWhitespace.toLowerCase()}`}>
             <img width="40px" src={quit} alt="quit" />
@@ -74,7 +73,7 @@ const Workout = ({ label }) => {
           <h1> {currentPlan[currentExerciseNumber].name}</h1>
           <h2>{currentPlan[currentExerciseNumber].reps} Reps</h2>
         </Names>
-      </DisplayedExercise>
+      </Display>
       <StyledButtons>
         <NextPrevButtons
           currentExerciseNumber={currentExerciseNumber}
@@ -92,8 +91,14 @@ const Workout = ({ label }) => {
     </StyledPage>
   ) : (
     <StyledPage>
-      <StartStopButton control="stop" label={label} />
-      <div>Add Exercises To Plan</div>
+      <Display>
+        <Quit>
+          <Link to={`${labelWithoutWhitespace.toLowerCase()}`}>
+            <img width="40px" src={quit} alt="quit" />
+          </Link>
+        </Quit>
+        <Names>Add Exercises To Plan</Names>
+      </Display>
     </StyledPage>
   );
 };

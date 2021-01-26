@@ -1,5 +1,9 @@
 /* eslint-disable array-callback-return */
-const MakeObjects = (workoutPlan, updateMaxExerciseNumber) => {
+const MakeObjects = (
+  workoutPlan,
+  updateMaxExerciseNumber,
+  updateFilledPlan
+) => {
   let objArr = [];
 
   workoutPlan.map((item) => {
@@ -11,6 +15,7 @@ const MakeObjects = (workoutPlan, updateMaxExerciseNumber) => {
     let indexOfFor = words.indexOf("for");
 
     if (indexOfFor > 1) {
+      updateFilledPlan(true);
       for (let i = 0; i < indexOfFor; i++) {
         name = name + " " + words[i];
       }
