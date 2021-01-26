@@ -17,7 +17,7 @@ const StyledButton = styled.button`
   outline: none;
 `;
 
-const Button = ({ label, onClick }) => {
+const Button = ({ label }) => {
   const labelWithoutWhitespace = label.replace(/\s+/g, "-");
 
   return (

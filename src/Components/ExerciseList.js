@@ -11,7 +11,6 @@ const ExerciseList = ({
   toggleModal,
   modal,
   updateChosenExercise,
-  chosenExercise,
 }) => {
   const names = GetExerciseNames(
     exercises,

@@ -33,7 +33,8 @@ const StyledItems = styled.li`
   flex-direction: column;
   padding: 8px;
 `;
-const StyledHeading = styled.th`
+const StyledHeading = styled.li`
+  list-style: none;
   align-items: center;
   text-decoration: underline;
   padding: 15px;
@@ -41,14 +42,14 @@ const StyledHeading = styled.th`
 
 const WorkoutPlan = ({ label, workoutPlan }) => {
   const { currentPlan, setCurrentPlan } = useContext(CurrentPlanContext);
-
+  let id = 0;
   return (
     <div>
       <StyledPlan>
         <StyledHeading>{label} Plan</StyledHeading>
         {workoutPlan.map((item) => {
           if (item !== "") {
-            return <StyledItems>{item}</StyledItems>;
+            return <StyledItems key={id + 1}>{item}</StyledItems>;
           }
         })}
 
