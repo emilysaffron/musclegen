@@ -54,34 +54,6 @@ const createRoutes = () => {
       <Router>
         <Redirect
           noThrow
-          from="/musclegen/New%20Workout"
-          to={"/musclegen/NewWorkout"}
-        />
-      </Router>
-      <Router>
-        <Redirect
-          noThrow
-          from="/musclegen/Past%20Workouts"
-          to={"/musclegen/PastWorkouts"}
-        />
-      </Router>
-      <Router>
-        <Redirect
-          noThrow
-          from="/musclegen/NewWorkout/Upper%20Body"
-          to={"/musclegen/NewWorkout/UpperBody"}
-        />
-      </Router>{" "}
-      <Router>
-        <Redirect
-          noThrow
-          from="/musclegen/NewWorkout/Lower%20Body"
-          to={"/musclegen/NewWorkout/LowerBody"}
-        />
-      </Router>
-      <Router>
-        <Redirect
-          noThrow
           from="/musclegen/NewWorkout/UpperBody/Workout/UpperBody/"
           to={"/musclegen/NewWorkout/UpperBody"}
         />

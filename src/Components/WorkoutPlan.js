@@ -3,7 +3,7 @@ import React from "react";
 import styled from "@emotion/styled";
 
 import StartStopButton from "./StartStopButton";
-import TempSavePlan from "../Helpers/TempSavePlan";
+
 const StyledPlan = styled.ul`
   background: #cea8bb;
   display: flex;
@@ -56,11 +56,7 @@ const WorkoutPlan = ({ label, workoutPlan }) => {
           }
         })}
 
-        <StartStopButton
-          control="start"
-          label={label}
-          onClick={TempSavePlan(workoutPlan)}
-        />
+        <StartStopButton control="start" label={label} />
       </StyledPlan>
     </div>
   );

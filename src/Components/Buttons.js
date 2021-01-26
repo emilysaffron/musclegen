@@ -18,9 +18,11 @@ const StyledButton = styled.button`
 `;
 
 const Button = ({ label, onClick }) => {
+  const labelWithoutWhitespace = label.replace(/\s+/g, "-");
+
   return (
-    <Link to={`${label}`}>
-      <StyledButton>{label}</StyledButton>;
+    <Link to={`${labelWithoutWhitespace.toLowerCase()}`}>
+      <StyledButton>{label}</StyledButton>
     </Link>
   );
 };

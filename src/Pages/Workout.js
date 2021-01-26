@@ -1,11 +1,8 @@
 import StartStopButton from "../Components/StartStopButton";
-import WorkoutPlan from "../Components/WorkoutPlan";
-const Workout = ({ workoutPlan, label }) => {
-  let currentPlan = require("../Data/currentPlan.json");
 
+const Workout = ({ workoutPlan, label }) => {
   return (
     <div>
-    
       <StartStopButton control="stop" label={label} />
     </div>
   );
