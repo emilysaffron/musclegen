@@ -1,5 +1,7 @@
 /* eslint-disable array-callback-return */
-import React from "react";
+import React, { useContext } from "react";
+import { CurrentPlanContext } from "../Helpers/CurrentPlanContext";
+import setWorkoutPlan from "../Helpers/SetWorkoutPlan";
 import styled from "@emotion/styled";
 
 import StartStopButton from "./StartStopButton";
@@ -38,6 +40,8 @@ const StyledHeading = styled.th`
 `;
 
 const WorkoutPlan = ({ label, workoutPlan }) => {
+  const { currentPlan, setCurrentPlan } = useContext(CurrentPlanContext);
+
   return (
     <div>
       <StyledPlan>
@@ -48,7 +52,13 @@ const WorkoutPlan = ({ label, workoutPlan }) => {
           }
         })}
 
-        <StartStopButton control="start" label={label} />
+        <StartStopButton
+          control="start"
+          label={label}
+          onClick={() =>
+            setWorkoutPlan(workoutPlan, { currentPlan, setCurrentPlan })
+          }
+        />
       </StyledPlan>
     </div>
   );
