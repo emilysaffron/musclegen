@@ -21,7 +21,6 @@ const ExerciseModal = ({
   toggleModal,
   AddToWorkoutPlan,
   workoutPlan,
-  
 }) => {
   const [repNumber, updateRepNumber] = useState(0);
   return modal ? (
@@ -36,7 +35,6 @@ const ExerciseModal = ({
         toggleModal={toggleModal}
         AddToWorkoutPlan={AddToWorkoutPlan}
         workoutPlan={workoutPlan}
-       
       />
     </StyledModal>
   ) : null;
