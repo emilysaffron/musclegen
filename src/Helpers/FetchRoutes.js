@@ -54,14 +54,14 @@ const createRoutes = () => {
       <Router>
         <Redirect
           noThrow
-          from="/musclegen/new-workout/upper-body/workout/upper-body/"
-          to={"/musclegen/NewWorkout/UpperBody"}
+          from="/musclegen/new-workout/upper-body/workout/upperbody/"
+          to={"/musclegen/new-workout/upper-body"}
         />
       </Router>
       <Router>
         <Redirect
           noThrow
-          from="/musclegen/new-workout/lower-body/workout/lower-body"
+          from="/musclegen/new-workout/lower-body/workout/lowerbody"
           to={"/musclegen/new-workout/lower-body"}
         />
       </Router>
