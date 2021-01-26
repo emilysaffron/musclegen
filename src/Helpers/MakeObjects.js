@@ -1,4 +1,5 @@
-const MakeObjects = (workoutPlan) => {
+/* eslint-disable array-callback-return */
+const MakeObjects = (workoutPlan, updateMaxExerciseNumber) => {
   let objArr = [];
 
   workoutPlan.map((item) => {
@@ -23,6 +24,7 @@ const MakeObjects = (workoutPlan) => {
       objArr.push(obj);
     }
   });
+  updateMaxExerciseNumber(objArr.length);
 
   return objArr;
 };
