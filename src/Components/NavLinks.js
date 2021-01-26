@@ -12,16 +12,16 @@ const NavLinks = ({ setAnchorEl }) => {
       <Link to={`/musclegen`}>
         <MenuItem onClick={handleClose}>Home</MenuItem>
       </Link>
-      <Link to={`/musclegen/NewWorkout`}>
+      <Link to={`/musclegen/new-workout`}>
         <MenuItem onClick={handleClose}>New Workout</MenuItem>
       </Link>
-      <Link to={`/musclegen/PastWorkouts`}>
+      <Link to={`/musclegen/past-workouts`}>
         <MenuItem onClick={handleClose}>Past Workouts</MenuItem>
       </Link>
-      <Link to={`/musclegen/Exercises`}>
+      <Link to={`/musclegen/exercises`}>
         <MenuItem onClick={handleClose}>Exercises</MenuItem>
       </Link>
-      <Link to={`/musclegen/Links`}>
+      <Link to={`/musclegen/links`}>
         <MenuItem onClick={handleClose}>Links</MenuItem>
       </Link>
     </div>
