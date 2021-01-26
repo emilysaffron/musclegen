@@ -36,14 +36,6 @@ const StyledHeading = styled.th`
   text-decoration: underline;
   padding: 15px;
 `;
-const StartButton = styled.button`
-  width: 50px;
-  height: 25px;
-  border-radius: 50%;
-  &:hover {
-    cursor: pointer;
-  }
-`;
 
 const WorkoutPlan = ({ label, workoutPlan }) => {
   return (
