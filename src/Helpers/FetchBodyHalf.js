@@ -1,7 +1,7 @@
 import FetchExercises from "./FetchExercises";
-
 const FetchBodyHalf = (half) => {
   let filteredExercises = [];
+
   const exercises = FetchExercises();
 
   for (let i = 0; i < exercises.length; i++) {

@@ -1,47 +1,57 @@
-import React from "react";
-import Button from "@material-ui/core/Button";
-import Menu from "@material-ui/core/Menu";
-import NavLinks from "./NavLinks";
-import Fade from "@material-ui/core/Fade";
 import styled from "@emotion/styled";
+import ToggleModal from "../Helpers/ToggleModal";
+import Menu from "./Menu";
+import quit from "../quit.png";
 
-const StyledContainer = styled.div`
-  position: -webkit-sticky;
-  position: sticky;
-  top: 1rem;
+const StyledModal = styled.div`
+  width: 300px;
+  height: 100%;
+  align-self: baseline;
+  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
+  position: fixed;
+  z-index: 100;
+  border-right: black;
+  border-right-color: black;
+  border-right-style: solid;
+  border-right-width: thin;
 `;
-const DropDownNav = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+const Quit = styled.div`
+  width: 40px;
+  align-self: baseline;
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+const OpenMenu = styled.div`
+  font-family: Palatino, URW Palladio L, serif;
+  font-size: 20px;
+  color: black;
+  &:hover {
+    cursor: pointer;
+  }
+  align-self: baseline;
+  align-items: center;
+  flex-direction: column;
+`;
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  return (
-    <StyledContainer>
-      <Button
-        aria-controls="fade-menu"
-        aria-haspopup="true"
-        onClick={handleClick}
-      >
-        Options
-      </Button>
+const DropDownNav = ({ navState, toggleNavState }) => {
+  return navState ? (
+    <StyledModal>
+      <Quit onClick={() => ToggleModal(toggleNavState, navState)}>
+        <img width="40px" src={quit} alt="quit" />
+      </Quit>
       <Menu
-        id="fade-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={open}
-        onClose={handleClose}
-        TransitionComponent={Fade}
-      >
-        <NavLinks setAnchorEl={setAnchorEl} />
-      </Menu>
-    </StyledContainer>
+        labels={["Home", "New Workout", "Past Workouts", "Exercises", "Links"]}
+        use="dropdown"
+      />
+    </StyledModal>
+  ) : (
+    <OpenMenu onClick={() => ToggleModal(toggleNavState, navState)}>
+      OPTIONS
+    </OpenMenu>
   );
 };
 

@@ -1,6 +1,5 @@
 import Menu from "../Components/Menu";
-import clicked from "../Helpers/ButtonClick";
 const NewWorkout = () => {
-  return <Menu labels={["Upper Body", "Lower Body"]} onClick={clicked} />;
+  return <Menu labels={["Upper Body", "Lower Body"]} use="normal" />;
 };
 export default NewWorkout;

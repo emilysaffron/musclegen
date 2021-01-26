@@ -10,59 +10,47 @@ const createRoutes = () => {
   return (
     <div>
       <Router>
-        <Exercises exact path={"musclegen/exercises"} />
+        <Exercises exact path={"/exercises"} />
       </Router>
       <Router>
-        <HomePage path={"/musclegen"} />
+        <HomePage path={"/"} />
       </Router>
       <Router>
-        <Links exact path={"musclegen/links"} />
+        <Links exact path={"/links"} />
       </Router>
       <Router>
-        <NewWorkout exact path={"musclegen/new-workout"} />
+        <NewWorkout exact path={"/new-workout"} />
       </Router>{" "}
       <Router>
-        <PastWorkouts exact path={"musclegen/past-workouts"} />
+        <PastWorkouts exact path={"/past-workouts"} />
       </Router>
       <Router>
-        <WorkoutBuilder
-          path={"/musclegen/new-workout/upper-body"}
-          label="UpperBody"
-        />
+        <WorkoutBuilder path={"/new-workout/upper-body"} label="UpperBody" />
       </Router>
       <Router>
-        <WorkoutBuilder
-          path={"/musclegen/new-workout/lower-body"}
-          label="LowerBody"
-        />
+        <WorkoutBuilder path={"/new-workout/lower-body"} label="LowerBody" />
       </Router>
       <Router>
-        <Workout
-          path={"/musclegen/new-workout/upper-body/workout"}
-          label="UpperBody"
-        />
+        <Workout path={"/new-workout/upper-body/workout"} label="UpperBody" />
       </Router>
       <Router>
-        <Workout
-          path={"/musclegen/new-workout/lower-body/workout"}
-          label="LowerBody"
-        />
+        <Workout path={"/new-workout/lower-body/workout"} label="LowerBody" />
       </Router>
       <Router>
-        <Redirect noThrow from="/" to={"/musclegen"} />
+        <Redirect noThrow from="/home" to={"/"} />
       </Router>
       <Router>
         <Redirect
           noThrow
-          from="/musclegen/new-workout/upper-body/workout/upperbody/"
-          to={"/musclegen/new-workout/upper-body"}
+          from="/new-workout/upper-body/workout/upperbody"
+          to={"/new-workout/upper-body"}
         />
       </Router>
       <Router>
         <Redirect
           noThrow
-          from="/musclegen/new-workout/lower-body/workout/lowerbody"
-          to={"/musclegen/new-workout/lower-body"}
+          from="/new-workout/lower-body/workout/lowerbody"
+          to={"/new-workout/lower-body"}
         />
       </Router>
     </div>

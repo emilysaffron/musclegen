@@ -7,8 +7,8 @@ const StyledButtons = styled.div`
   justify-content: center;
 `;
 
-const Menu = ({ labels, onClick }) => {
-  const buttons = GetButtonNames(labels, onClick);
+const Menu = ({ labels, use }) => {
+  const buttons = GetButtonNames(labels, use);
   return <StyledButtons>{buttons}</StyledButtons>;
 };
 

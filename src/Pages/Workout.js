@@ -1,4 +1,3 @@
-import StartStopButton from "../Components/StartStopButton";
 import { CurrentPlanContext } from "../Helpers/CurrentPlanContext";
 import MakeObjects from "../Helpers/MakeObjects";
 import { useState, useContext, useEffect } from "react";
@@ -59,6 +58,7 @@ const Workout = ({ label }) => {
         MakeObjects(currentPlan, updateMaxExerciseNumber, updateFilledPlan)
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return filledPlan ? (

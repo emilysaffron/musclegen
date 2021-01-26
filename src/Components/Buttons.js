@@ -17,10 +17,33 @@ const StyledButton = styled.button`
   outline: none;
 `;
 
-const Button = ({ label }) => {
-  const labelWithoutWhitespace = label.replace(/\s+/g, "-");
+const DropDownButton = styled.button`
+  background: none;
+  width: 100%;
+  height: max-content;
+  padding: 20px;
 
-  return (
+  font-size: 30px;
+  font-family: Palatino, URW Palladio L, serif;
+  color: black;
+  &:hover {
+    cursor: pointer;
+  }
+  outline: none;
+  border: none;
+`;
+
+const Button = ({ label, use }) => {
+  const labelWithoutWhitespace = label.replace(/\s+/g, "-");
+  let dropdown = false;
+  if (use === "dropdown") {
+    dropdown = true;
+  }
+  return dropdown ? (
+    <Link to={`${labelWithoutWhitespace.toLowerCase()}`}>
+      <DropDownButton>{label}</DropDownButton>
+    </Link>
+  ) : (
     <Link to={`${labelWithoutWhitespace.toLowerCase()}`}>
       <StyledButton>{label}</StyledButton>
     </Link>

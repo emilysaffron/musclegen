@@ -4,7 +4,7 @@ import ConvertLabel from "../Helpers/ConvertLabel";
 import ExerciseList from "../Components/ExerciseList";
 import WorkoutPlan from "../Components/WorkoutPlan";
 import styled from "@emotion/styled";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const StyledPage = styled.div`
   display: flex;
   justify-content: center;
@@ -12,11 +12,14 @@ const StyledPage = styled.div`
 
 const WorkoutBuilder = ({ label }) => {
   const half = ConvertLabel(label);
-
-  const filteredExercises = FetchBodyHalf(half);
+  const [filteredExercises, fetchFilteredExercises] = useState("");
   const [modal, toggleModal] = useState(false);
   const [chosenExercise, updateChosenExercise] = useState("");
   const [workoutPlan, AddToWorkoutPlan] = useState(["", ""]);
+
+  useEffect(() => {
+    fetchFilteredExercises(FetchBodyHalf(half));
+  }, [half]);
 
   return (
     <StyledPage>
@@ -26,6 +29,7 @@ const WorkoutBuilder = ({ label }) => {
         modal={modal}
         updateChosenExercise={updateChosenExercise}
       />
+
       <ExerciseModal
         modal={modal}
         exercise={chosenExercise}
@@ -33,6 +37,7 @@ const WorkoutBuilder = ({ label }) => {
         AddToWorkoutPlan={AddToWorkoutPlan}
         workoutPlan={workoutPlan}
       />
+
       <WorkoutPlan label={label} workoutPlan={workoutPlan} />
     </StyledPage>
   );
