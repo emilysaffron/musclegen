@@ -27,6 +27,7 @@ const Exercise = ({
     ToggleModal(toggleModal, modal);
     updateChosenExercise(name);
   };
+
   return (
     <StyledExercise onClick={HandleClick}>
       <div>{name}</div>

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import GetExerciseNames from "../Helpers/GetExerciseNames";
-const StyledList = styled.div`
+const StyledList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
