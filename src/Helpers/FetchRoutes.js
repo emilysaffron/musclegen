@@ -10,41 +10,41 @@ const createRoutes = () => {
   return (
     <div>
       <Router>
-        <Exercises exact path={"musclegen/Exercises"} />
+        <Exercises exact path={"musclegen/exercises"} />
       </Router>
       <Router>
         <HomePage path={"/musclegen"} />
       </Router>
       <Router>
-        <Links exact path={"musclegen/Links"} />
+        <Links exact path={"musclegen/links"} />
       </Router>
       <Router>
-        <NewWorkout exact path={"musclegen/NewWorkout"} />
+        <NewWorkout exact path={"musclegen/new-workout"} />
       </Router>{" "}
       <Router>
-        <PastWorkouts exact path={"musclegen/PastWorkouts"} />
+        <PastWorkouts exact path={"musclegen/past-workouts"} />
       </Router>
       <Router>
         <WorkoutBuilder
-          path={"/musclegen/NewWorkout/UpperBody"}
+          path={"/musclegen/new-workout/upper-body"}
           label="UpperBody"
         />
       </Router>
       <Router>
         <WorkoutBuilder
-          path={"/musclegen/NewWorkout/LowerBody"}
+          path={"/musclegen/new-workout/lower-body"}
           label="LowerBody"
         />
       </Router>
       <Router>
         <Workout
-          path={"/musclegen/NewWorkout/UpperBody/Workout"}
+          path={"/musclegen/new-workout/upper-body/workout"}
           label="UpperBody"
         />
       </Router>
       <Router>
         <Workout
-          path={"/musclegen/NewWorkout/LowerBody/Workout"}
+          path={"/musclegen/new-workout/lower-body/workout"}
           label="LowerBody"
         />
       </Router>
@@ -54,15 +54,15 @@ const createRoutes = () => {
       <Router>
         <Redirect
           noThrow
-          from="/musclegen/NewWorkout/UpperBody/Workout/UpperBody/"
+          from="/musclegen/new-workout/upper-body/workout/upper-body/"
           to={"/musclegen/NewWorkout/UpperBody"}
         />
       </Router>
       <Router>
         <Redirect
           noThrow
-          from="/musclegen/NewWorkout/LowerBody/Workout/LowerBody"
-          to={"/musclegen/NewWorkout/LowerBody"}
+          from="/musclegen/new-workout/lower-body/workout/lower-body"
+          to={"/musclegen/new-workout/lower-body"}
         />
       </Router>
     </div>
