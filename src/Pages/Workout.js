@@ -6,6 +6,11 @@ import NextPrevButtons from "../Components/NextPrevButtons";
 import quit from "../quit.png";
 import React from "react";
 import { Link } from "@reach/router";
+import writeUserData from "../Helpers/WriteUserData";
+import firebaseConfig from "../firebaseConfig";
+import Firebase from "firebase";
+
+import getUserData from "../Helpers/getUserData";
 
 const Display = styled.div`
   background: #a8bbce;
@@ -47,6 +52,10 @@ const Names = styled.div`
 `;
 
 const Workout = ({ label }) => {
+  if (!Firebase.apps.length) {
+    Firebase.initializeApp(firebaseConfig);
+  }
+
   const labelWithoutWhitespace = label.replace(/\s+/g, "-");
   const { currentPlan, setCurrentPlan } = useContext(CurrentPlanContext);
   const [currentExerciseNumber, switchCurrentExerciseNumber] = useState(0);
@@ -88,6 +97,9 @@ const Workout = ({ label }) => {
           direction="next"
         />
       </StyledButtons>
+
+      <button onClick={() => writeUserData(currentPlan)} />
+      <button onClick={() => getUserData()} />
     </StyledPage>
   ) : (
     <StyledPage>
