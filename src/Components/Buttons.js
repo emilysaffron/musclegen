@@ -19,11 +19,9 @@ const StyledButton = styled.button`
 
 const DropDownButton = styled.button`
   background: none;
-  width: 100%;
-  height: max-content;
-  padding: 20px;
 
-  font-size: 30px;
+  width: max-content;
+  font-size: 20px;
   font-family: Palatino, URW Palladio L, serif;
   color: black;
   &:hover {
