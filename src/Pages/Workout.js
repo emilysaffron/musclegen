@@ -9,9 +9,9 @@ import { Link } from "@reach/router";
 import writeUserData from "../Helpers/WriteUserData";
 import firebaseConfig from "../firebaseConfig";
 import Firebase from "firebase";
-
 import getUserData from "../Helpers/getUserData";
-
+import CompletedModal from "../Components/CompletedModal";
+import ToggleModal from "../Helpers/ToggleModal";
 const Display = styled.div`
   background: #a8bbce;
   display: flex;
@@ -26,8 +26,6 @@ const Display = styled.div`
   height: 500px;
   width: 100px
   border: 2px solid black;
-
-
 `;
 const StyledButtons = styled.div`
   display: flex;
@@ -38,6 +36,7 @@ const StyledPage = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 `;
 
 const Quit = styled.div`
@@ -61,6 +60,7 @@ const Workout = ({ label }) => {
   const [currentExerciseNumber, switchCurrentExerciseNumber] = useState(0);
   const [maxExerciseNumber, updateMaxExerciseNumber] = useState(0);
   const [filledPlan, updateFilledPlan] = useState(false);
+  const [completedModal, toggleCompletedModal] = useState(false);
   useEffect(() => {
     if (currentPlan) {
       setCurrentPlan(
@@ -97,8 +97,14 @@ const Workout = ({ label }) => {
           direction="next"
         />
       </StyledButtons>
-
-      <button onClick={() => writeUserData(currentPlan)} />
+      <CompletedModal
+        modal={completedModal}
+        toggleModal={toggleCompletedModal}
+        currentPlan={currentPlan}
+      />
+      <button
+        onClick={() => ToggleModal(toggleCompletedModal, completedModal)}
+      />
       <button onClick={() => getUserData()} />
     </StyledPage>
   ) : (

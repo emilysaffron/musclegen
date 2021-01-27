@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import ToggleModal from "../Helpers/ToggleModal";
-import AddExercise from "../Helpers/AddExercise";
+import WriteUserData from "../Helpers/WriteUserData";
 const StyledButton = styled.button`
   border-radius: 20px;
   width: 150px;
@@ -19,31 +19,25 @@ const ButtonsContainer = styled.div`
   display: flex;
 `;
 
-const Confirmation = ({
-  repNumber,
-  exercise,
-  modal,
-  toggleModal,
-  AddToWorkoutPlan,
-  workoutPlan,
-}) => {
+const SaveButton = ({ modal, toggleModal, currentPlan }) => {
   const handleCancelClick = () => {
     ToggleModal(toggleModal, modal);
   };
   const handleConfirmClick = () => {
-    AddExercise(exercise, repNumber, AddToWorkoutPlan, workoutPlan);
-
+    WriteUserData(currentPlan);
     ToggleModal(toggleModal, modal);
   };
 
   return (
     <ButtonsContainer>
       <StyledButton onClick={() => handleConfirmClick()}>
-        add to plan
+        Save Workout
       </StyledButton>
-      <StyledButton onClick={() => handleCancelClick()}>cancel</StyledButton>
+      <StyledButton onClick={() => handleCancelClick()}>
+        Don't Save
+      </StyledButton>
     </ButtonsContainer>
   );
 };
 
-export default Confirmation;
+export default SaveButton;

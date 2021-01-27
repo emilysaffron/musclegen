@@ -28,7 +28,6 @@ const ExerciseModal = ({
       {exercise}
       <RepCounter repNumber={repNumber} updateRepNumber={updateRepNumber} />
       <Confirmation
-        choice="cancel"
         repNumber={repNumber}
         exercise={exercise}
         modal={modal}
