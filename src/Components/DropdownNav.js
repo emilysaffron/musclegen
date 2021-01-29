@@ -6,9 +6,7 @@ const StyledModal = styled.div`
   display: flex;
   align-items: baseline;
   flex-direction: column;
-  text-decoration: none;
   text-align: left;
-  position: fixed;
   z-index: 100;
 `;
 
@@ -25,19 +23,26 @@ const OpenMenu = styled.div`
 `;
 
 const DropDownNav = ({ navState, toggleNavState }) => {
-  return navState ? (
-    <StyledModal onMouseLeave={() => ToggleModal(toggleNavState, navState)}>
-      <OpenMenu>OPTIONS</OpenMenu>
-
-      <Menu
-        labels={["Home", "New Workout", "Past Workouts", "Exercises", "Links"]}
-        use="dropdown"
-      />
-    </StyledModal>
-  ) : (
-    <OpenMenu onMouseOver={() => ToggleModal(toggleNavState, navState)}>
-      OPTIONS
-    </OpenMenu>
+  return (
+    <div style={{ position: "fixed" }}>
+      <OpenMenu onMouseOver={() => ToggleModal(toggleNavState, navState)}>
+        OPTIONS
+      </OpenMenu>
+      {navState ? (
+        <StyledModal onMouseLeave={() => ToggleModal(toggleNavState, navState)}>
+          <Menu
+            labels={[
+              "Home",
+              "New Workout",
+              "Past Workouts",
+              "Exercises",
+              "Links",
+            ]}
+            use="dropdown"
+          />
+        </StyledModal>
+      ) : null}
+    </div>
   );
 };
 

@@ -11,22 +11,17 @@ const StyledButton = styled.button`
   font-size: 50px;
   font-family: Palatino, URW Palladio L, serif;
   color: black;
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
   outline: none;
 `;
 
 const DropDownButton = styled.button`
   background: none;
-
   width: max-content;
   font-size: 20px;
   font-family: Palatino, URW Palladio L, serif;
   color: black;
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
   outline: none;
   border: none;
 `;
