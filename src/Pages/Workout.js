@@ -6,12 +6,12 @@ import NextPrevButtons from "../Components/NextPrevButtons";
 import quit from "../quit.png";
 import React from "react";
 import { Link } from "@reach/router";
-import writeUserData from "../Helpers/WriteUserData";
 import firebaseConfig from "../firebaseConfig";
 import Firebase from "firebase";
 import getUserData from "../Helpers/getUserData";
 import CompletedModal from "../Components/CompletedModal";
 import ToggleModal from "../Helpers/ToggleModal";
+import tick from "../tick.png";
 const Display = styled.div`
   background: #a8bbce;
   display: flex;
@@ -48,6 +48,14 @@ const Quit = styled.div`
 `;
 const Names = styled.div`
   margin: auto;
+`;
+
+const FinishedButton = styled.img`
+  border-radius: 50%;
+  background-color: #b2fba5;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
 `;
 
 const Workout = ({ label }) => {
@@ -102,8 +110,10 @@ const Workout = ({ label }) => {
         toggleModal={toggleCompletedModal}
         currentPlan={currentPlan}
       />
-      <button
+      <FinishedButton
         onClick={() => ToggleModal(toggleCompletedModal, completedModal)}
+        src={tick}
+        alt="finish"
       />
       <button onClick={() => getUserData()} />
     </StyledPage>
