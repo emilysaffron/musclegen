@@ -5,7 +5,7 @@ const FilterModal = (filterExercises, half) => {
   const [filterState, toggleFilterState] = useState(false);
 
   return filterState ? (
-    <div>
+    <div key={Math.random()}>
       {getExerciseTargets(filterExercises, half)}
       <button onClick={() => toggleFilterState(!filterState)} />
     </div>
