@@ -1,16 +1,73 @@
 import { useState } from "react";
+import styled from "@emotion/styled";
 
 import getExerciseTargets from "../Helpers/getExerciseTargets";
+
+const StyledModal = styled.div`
+  background: #cea8bb;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: max-content;
+  border-radius: 20px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
+`;
+const OpenButton = styled.button`
+  background: #cea8bb;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: max-content;
+  border: 2px solid black;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+`;
+const ClearFilter = styled.button`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+  margin: 5px;
+  align-items: center;
+  border-radius: 20px;
+  width: max-content;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 const FilterModal = (filterExercises, half) => {
   const [filterState, toggleFilterState] = useState(false);
 
   return filterState ? (
-    <div key={Math.random()}>
+    <StyledModal key={Math.random()}>
       {getExerciseTargets(filterExercises, half)}
-      <button onClick={() => toggleFilterState(!filterState)} />
-    </div>
+      <ClearFilter key={Math.random()} onClick={() => filterExercises("")}>
+        Clear Filter
+      </ClearFilter>
+      <OpenButton onClick={() => toggleFilterState(!filterState)}>
+        Done
+      </OpenButton>
+    </StyledModal>
   ) : (
-    <button onClick={() => toggleFilterState(!filterState)} />
+    <OpenButton onClick={() => toggleFilterState(!filterState)}>
+      Filter Exercises
+    </OpenButton>
   );
 };
 export default FilterModal;

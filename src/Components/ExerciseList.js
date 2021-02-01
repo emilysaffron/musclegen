@@ -9,7 +9,9 @@ const StyledList = styled.ul`
   flex-direction: column;
   align-items: center;
 `;
-
+const StyledContent = styled.div`
+  display: flex;
+`;
 const ExerciseList = ({
   exercises,
   toggleModal,
@@ -35,10 +37,10 @@ const ExerciseList = ({
   }, [filter, exercises]);
 
   return (
-    <div>
-      {FilterModal(filterExercises,half)}
+    <StyledContent>
+      {FilterModal(filterExercises, half)}
       <StyledList>{names}</StyledList>
-    </div>
+    </StyledContent>
   );
 };
 export default ExerciseList;
