@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import ToggleModal from "../Helpers/ToggleModal";
 import WriteUserData from "../Helpers/WriteUserData";
+import { Link } from "@reach/router";
 const StyledButton = styled.button`
   border-radius: 20px;
   width: 150px;
@@ -25,18 +26,21 @@ const SaveButton = ({ modal, toggleModal, currentPlan }) => {
   };
   const handleConfirmClick = () => {
     WriteUserData(currentPlan);
+
     ToggleModal(toggleModal, modal);
   };
 
   return (
-    <ButtonsContainer>
-      <StyledButton onClick={() => handleConfirmClick()}>
-        Save Workout
-      </StyledButton>
-      <StyledButton onClick={() => handleCancelClick()}>
-        Don't Save
-      </StyledButton>
-    </ButtonsContainer>
+    <Link to={"/"}>
+      <ButtonsContainer>
+        <StyledButton onClick={() => handleConfirmClick()}>
+          Save Workout
+        </StyledButton>
+        <StyledButton onClick={() => handleCancelClick()}>
+          Don't Save
+        </StyledButton>
+      </ButtonsContainer>
+    </Link>
   );
 };
 

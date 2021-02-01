@@ -51,6 +51,7 @@ const createRoutes = () => {
           noThrow
           from="/new-workout/lower-body/workout/lowerbody"
           to={"/new-workout/lower-body"}
+          
         />
       </Router>
     </div>
