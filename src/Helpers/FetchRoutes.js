@@ -5,6 +5,7 @@ import NewWorkout from "../Pages/NewWorkout";
 import PastWorkouts from "../Pages/PastWorkouts";
 import WorkoutBuilder from "../Pages/WorkoutBuilder";
 import Workout from "../Pages/Workout";
+import Videos from "../Pages/Videos";
 const createRoutes = () => {
   return (
     <div>
@@ -31,6 +32,9 @@ const createRoutes = () => {
       </Router>
       <Router>
         <Workout path={"/new-workout/lower-body/workout"} label="LowerBody" />
+      </Router>
+      <Router>
+        <Videos path={"/links/videos"} />
       </Router>
       <Router>
         <Redirect noThrow from="/home" to={"/"} />

@@ -10,7 +10,7 @@ const StyledLinks = styled.div`
 const Links = () => {
   return (
     <StyledLinks>
-      <Menu labels={["Workouts", "Meals"]} use="normal" />
+      <Menu labels={["Videos", "Meals"]} use="normal" />
     </StyledLinks>
   );
 };
