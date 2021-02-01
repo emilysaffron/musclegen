@@ -56,7 +56,6 @@ const FinishedButton = styled.img`
 `;
 
 const Workout = ({ label }) => {
-
   const labelWithoutWhitespace = label.replace(/\s+/g, "-");
   const { currentPlan, setCurrentPlan } = useContext(CurrentPlanContext);
   const [currentExerciseNumber, switchCurrentExerciseNumber] = useState(0);
@@ -66,7 +65,12 @@ const Workout = ({ label }) => {
   useEffect(() => {
     if (currentPlan) {
       setCurrentPlan(
-        MakeObjects(currentPlan, updateMaxExerciseNumber, updateFilledPlan)
+        MakeObjects(
+          currentPlan,
+          updateMaxExerciseNumber,
+          updateFilledPlan,
+          label
+        )
       );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -1,18 +1,5 @@
 import styled from "@emotion/styled";
 
-const StyledPlan = styled.ul`
-  background: #cea8bb;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  padding: 5px;
-  margin-left: 50px;
-  align-items: center;
-  border-radius: 20px;
-  width: 385px;
-  height: max-content;
-  border: 2px solid black;
-`;
 const StyledItems = styled.li`
   list-style: none;
   font-size: 12px;
@@ -23,20 +10,29 @@ const StyledItems = styled.li`
   flex-direction: column;
   padding: 8px;
 `;
+const StyledHeading = styled.li`
+  list-style: none;
+  align-items: center;
+  text-decoration: underline;
+  padding: 15px;
+`;
 
 const getPastPlan = (value) => {
   return (
-    <StyledPlan>
+    <div>
       {Object.keys(value).map((key) => {
         const item = value[key];
+        <StyledHeading key={key + 3}> {item.label}Plan</StyledHeading>;
 
         return (
-          <StyledItems key={key}>
-            {item.name} for {item.reps} reps
-          </StyledItems>
+          <div>
+            <StyledItems key={key}>
+              {item.name} for {item.reps} reps
+            </StyledItems>
+          </div>
         );
       })}
-    </StyledPlan>
+    </div>
   );
 };
 

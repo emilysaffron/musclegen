@@ -2,7 +2,8 @@
 const MakeObjects = (
   workoutPlan,
   updateMaxExerciseNumber,
-  updateFilledPlan
+  updateFilledPlan,
+  label
 ) => {
   let objArr = [];
 
@@ -21,8 +22,9 @@ const MakeObjects = (
       }
 
       reps = words[indexOfFor + 1];
-
+      console.log("hi " + label);
       let obj = {
+        label: label,
         name: name,
         reps: reps,
       };
