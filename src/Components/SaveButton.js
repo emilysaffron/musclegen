@@ -26,7 +26,6 @@ const SaveButton = ({ modal, toggleModal, currentPlan }) => {
   };
   const handleConfirmClick = () => {
     WriteUserData(currentPlan);
-
     ToggleModal(toggleModal, modal);
   };
 

@@ -1,13 +1,16 @@
 import Firebase from "firebase";
 
-const getUserData = () => {
+const getUserData = (dataIsFetched) => {
+  let data = "";
   let ref = Firebase.database().ref("/");
   ref.on("value", (snapshot) => {
-    const state = snapshot.val();
+    data = snapshot.val();
 
-    console.log(state);
+    console.log(data);
+    console.log("DATA RETRIEVED");
+    dataIsFetched(true);
   });
-  console.log("DATA RETRIEVED");
+  return data;
 };
 
 export default getUserData;

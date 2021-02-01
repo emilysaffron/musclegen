@@ -6,9 +6,6 @@ import NextPrevButtons from "../Components/NextPrevButtons";
 import quit from "../quit.png";
 import React from "react";
 import { Link } from "@reach/router";
-import firebaseConfig from "../firebaseConfig";
-import Firebase from "firebase";
-import getUserData from "../Helpers/getUserData";
 import CompletedModal from "../Components/CompletedModal";
 import ToggleModal from "../Helpers/ToggleModal";
 import tick from "../tick.png";
@@ -59,9 +56,6 @@ const FinishedButton = styled.img`
 `;
 
 const Workout = ({ label }) => {
-  if (!Firebase.apps.length) {
-    Firebase.initializeApp(firebaseConfig);
-  }
 
   const labelWithoutWhitespace = label.replace(/\s+/g, "-");
   const { currentPlan, setCurrentPlan } = useContext(CurrentPlanContext);
@@ -115,7 +109,6 @@ const Workout = ({ label }) => {
         src={tick}
         alt="finish"
       />
-      <button onClick={() => getUserData()} />
     </StyledPage>
   ) : (
     <StyledPage>
