@@ -31,13 +31,7 @@ const DropDownNav = ({ navState, toggleNavState }) => {
       {navState ? (
         <StyledModal onMouseLeave={() => ToggleModal(toggleNavState, navState)}>
           <Menu
-            labels={[
-              "Home",
-              "New Workout",
-              "Past Workouts",
-              "Exercises",
-              "Links",
-            ]}
+            labels={["Home", "New Workout", "Past Workouts", "Links"]}
             use="dropdown"
           />
         </StyledModal>

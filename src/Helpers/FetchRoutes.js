@@ -1,5 +1,4 @@
 import { Router, Redirect } from "@reach/router";
-import Exercises from "../Pages/Exercises";
 import HomePage from "../Pages/HomePage";
 import Links from "../Pages/Links";
 import NewWorkout from "../Pages/NewWorkout";
@@ -9,9 +8,6 @@ import Workout from "../Pages/Workout";
 const createRoutes = () => {
   return (
     <div>
-      <Router>
-        <Exercises exact path={"/exercises"} />
-      </Router>
       <Router>
         <HomePage path={"/"} />
       </Router>
@@ -51,7 +47,6 @@ const createRoutes = () => {
           noThrow
           from="/new-workout/lower-body/workout/lowerbody"
           to={"/new-workout/lower-body"}
-          
         />
       </Router>
     </div>

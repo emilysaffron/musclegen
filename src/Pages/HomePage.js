@@ -4,14 +4,13 @@ import styled from "@emotion/styled";
 const StyledHome = styled.div`
   display: flex;
   justify-content: center;
+  padding: 50px;
 `;
+
 const HomePage = () => {
   return (
     <StyledHome>
-      <Menu
-        labels={["New Workout", "Past Workouts", "Exercises", "Links"]}
-        use="normal"
-      />
+      <Menu labels={["New Workout", "Past Workouts", "Links"]} use="normal" />
     </StyledHome>
   );
 };
