@@ -28,6 +28,7 @@ const WorkoutBuilder = ({ label }) => {
         toggleModal={toggleModal}
         modal={modal}
         updateChosenExercise={updateChosenExercise}
+        half={half}
       />
 
       <ExerciseModal
