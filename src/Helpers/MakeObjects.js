@@ -1,4 +1,6 @@
 /* eslint-disable array-callback-return */
+import getDate from "./getDate";
+
 const MakeObjects = (
   workoutPlan,
   updateMaxExerciseNumber,
@@ -6,7 +8,7 @@ const MakeObjects = (
   label
 ) => {
   let objArr = [];
-
+  let date = getDate();
   workoutPlan.map((item) => {
     let name = "";
     let reps = "";
@@ -24,6 +26,7 @@ const MakeObjects = (
       reps = words[indexOfFor + 1];
       console.log("hi " + label);
       let obj = {
+        date: date,
         label: label,
         name: name,
         reps: reps,

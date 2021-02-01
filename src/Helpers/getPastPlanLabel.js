@@ -10,6 +10,7 @@ const StyledHeading = styled.li`
 
 const getPastPlanLabel = (value) => {
   let label = "";
+  let date = "";
   let keys = "";
   return (
     <div>
@@ -18,8 +19,11 @@ const getPastPlanLabel = (value) => {
 
         const item = value[key];
         label = item.label;
+        date = item.date;
       })}
-      <StyledHeading key={keys}>{label}</StyledHeading>
+      <StyledHeading key={keys}>
+        {label} - on {date}
+      </StyledHeading>
     </div>
   );
 };
