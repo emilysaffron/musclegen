@@ -6,7 +6,6 @@ const getUserData = (dataIsFetched) => {
   ref.on("value", (snapshot) => {
     data = snapshot.val();
 
-    console.log(data);
     console.log("DATA RETRIEVED");
     dataIsFetched(true);
   });

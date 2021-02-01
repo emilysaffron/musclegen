@@ -29,9 +29,9 @@ const getPastPlan = (value) => {
     <StyledPlan>
       {Object.keys(value).map((key) => {
         const item = value[key];
-        console.log("valuenow = " + item.name);
+
         return (
-          <StyledItems>
+          <StyledItems key={key}>
             {item.name} for {item.reps} reps
           </StyledItems>
         );

@@ -15,7 +15,6 @@ const PastWorkouts = () => {
     const response = getUserData(dataIsFetched);
     if (response) {
       updatePastWorkouts(response);
-      console.log("HI " + pastWorkouts);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetched]);
@@ -27,7 +26,7 @@ const PastWorkouts = () => {
 
         // eslint-disable-next-line array-callback-return
 
-        return getPastPlan(value);
+        return <div key={key}>{getPastPlan(value)}</div>;
       })}
     </StyledPage>
   ) : (
