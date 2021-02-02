@@ -52,12 +52,10 @@ const RepCounter = ({ repNumber, updateRepNumber }) => {
     <StyledReps>
       <ButtonsContainer>
         <StyledButton onClick={() => handleClick("plus")}>
-          {" "}
-          Increase Reps{" "}
+          Increase Reps
         </StyledButton>
         <StyledButton onClick={() => handleClick("minus")}>
-          {" "}
-          Decrease Reps{" "}
+          Decrease Reps
         </StyledButton>
       </ButtonsContainer>
       <StyledNum>{repNumber}</StyledNum>
