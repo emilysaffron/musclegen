@@ -7,7 +7,6 @@ import quit from "../quit.png";
 import React from "react";
 import { Link } from "@reach/router";
 import CompletedModal from "../Components/CompletedModal";
-import ToggleModal from "../Helpers/ToggleModal";
 import tick from "../tick.png";
 const Display = styled.div`
   background: #a8bbce;
@@ -109,7 +108,7 @@ const Workout = ({ label }) => {
         currentPlan={currentPlan}
       />
       <FinishedButton
-        onClick={() => ToggleModal(toggleCompletedModal, completedModal)}
+        onClick={() => toggleCompletedModal(!completedModal)}
         src={tick}
         alt="finish"
       />

@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import ToggleModal from "../Helpers/ToggleModal";
 import AddExercise from "../Helpers/AddExercise";
 const StyledButton = styled.button`
   border-radius: 20px;
@@ -28,12 +27,12 @@ const Confirmation = ({
   workoutPlan,
 }) => {
   const handleCancelClick = () => {
-    ToggleModal(toggleModal, modal);
+    toggleModal(!modal);
   };
   const handleConfirmClick = () => {
     AddExercise(exercise, repNumber, AddToWorkoutPlan, workoutPlan);
 
-    ToggleModal(toggleModal, modal);
+    toggleModal(!modal);
   };
 
   return (

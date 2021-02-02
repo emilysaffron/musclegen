@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import ToggleModal from "../Helpers/ToggleModal";
 import WriteUserData from "../Helpers/WriteUserData";
 import { Link } from "@reach/router";
 const StyledButton = styled.button`
@@ -22,11 +21,11 @@ const ButtonsContainer = styled.div`
 
 const SaveButton = ({ modal, toggleModal, currentPlan }) => {
   const handleCancelClick = () => {
-    ToggleModal(toggleModal, modal);
+    toggleModal(!modal);
   };
   const handleConfirmClick = () => {
     WriteUserData(currentPlan);
-    ToggleModal(toggleModal, modal);
+    toggleModal(modal);
   };
 
   return (

@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import ToggleModal from "../Helpers/ToggleModal";
 const StyledExercise = styled.button`
   background: #a8bbce;
   display: flex;
@@ -24,7 +23,7 @@ const Exercise = ({
   updateChosenExercise,
 }) => {
   const HandleClick = () => {
-    ToggleModal(toggleModal, modal);
+    toggleModal(!modal);
     updateChosenExercise(name);
   };
 
