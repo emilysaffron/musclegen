@@ -1,7 +1,7 @@
 import renderer from "react-test-renderer";
 import ExerciseList from "./ExerciseList";
 
-it("Exercise Snapshot", () => {
+it("ExerciseList Snapshot", () => {
   const tree = renderer
     .create(
       <ExerciseList

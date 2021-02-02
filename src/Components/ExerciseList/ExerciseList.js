@@ -2,7 +2,7 @@
 import styled from "@emotion/styled";
 import GetExerciseNames from "../../Helpers/GetExerciseNames";
 import { useState, useEffect } from "react";
-import FilterModal from "../FilterModal";
+import FilterModal from "../FilterModal/FilterModal";
 
 const StyledList = styled.ul`
   display: flex;

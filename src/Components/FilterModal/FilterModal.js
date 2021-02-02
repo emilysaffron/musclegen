@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
 
-import getExerciseTargets from "../Helpers/getExerciseTargets";
+import getExerciseTargets from "../../Helpers/getExerciseTargets";
 
 const StyledModal = styled.div`
   background: #cea8bb;
