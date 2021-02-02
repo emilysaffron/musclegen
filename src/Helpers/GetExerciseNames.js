@@ -12,7 +12,6 @@ const GetExerciseNames = (
 
   Object.keys(exercises).map((key) => {
     const item = exercises[key];
-    console.log(item.model.target);
     if (!filter) {
       names.push(
         <Exercise
