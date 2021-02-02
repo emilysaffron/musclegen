@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import Exercise from "../Components/Exercise/Exercise";
 
 const GetExerciseNames = (
@@ -9,32 +10,34 @@ const GetExerciseNames = (
 ) => {
   let names = [];
 
-  for (let i = 0; i < exercises.length; i++) {
+  Object.keys(exercises).map((key) => {
+    const item = exercises[key];
+    console.log(item.model.target);
     if (!filter) {
       names.push(
         <Exercise
-          key={i}
-          name={exercises[i].model.name}
-          target={exercises[i].model.target}
+          key={Math.random()}
+          name={item.model.name}
+          target={item.model.target}
           toggleModal={toggleModal}
           modal={modal}
           updateChosenExercise={updateChosenExercise}
         />
       );
     }
-    if (filter === exercises[i].model.target) {
+    if (filter === item.model.target) {
       names.push(
         <Exercise
-          key={i}
-          name={exercises[i].model.name}
-          target={exercises[i].model.target}
+          key={Math.random()}
+          name={item.model.name}
+          target={item.model.target}
           toggleModal={toggleModal}
           modal={modal}
           updateChosenExercise={updateChosenExercise}
         />
       );
     }
-  }
+  });
 
   return names;
 };
