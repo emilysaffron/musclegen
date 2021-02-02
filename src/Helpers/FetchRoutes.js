@@ -8,16 +8,19 @@ import Workout from "../Pages/Workout";
 import Videos from "../Pages/Videos";
 const createRoutes = () => {
   return (
+    // Fragment can be used here rather than div
     <div>
       <Router>
         <HomePage path={"/"} />
       </Router>
       <Router>
+        {/* Simplify for now - maybe patch this component? */}
         <Links exact path={"/links"} />
       </Router>
       <Router>
         <NewWorkout exact path={"/new-workout"} />
-      </Router>{" "}
+      </Router>
+      {/* Typo here - just remove the {" "} */}{" "}
       <Router>
         <PastWorkouts exact path={"/past-workouts"} />
       </Router>
