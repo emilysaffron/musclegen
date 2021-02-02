@@ -1,5 +1,5 @@
 import FetchBodyHalf from "../Helpers/FetchBodyHalf";
-import ExerciseModal from "../Components/ExerciseModal";
+import ExerciseModal from "../Components/ExerciseModal/ExerciseModal";
 import ConvertLabel from "../Helpers/ConvertLabel";
 import ExerciseList from "../Components/ExerciseList/ExerciseList";
 import WorkoutPlan from "../Components/WorkoutPlan";

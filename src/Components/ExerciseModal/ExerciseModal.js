@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import RepCounter from "./RepCounter";
-import Confirmation from "./Confirmation/Confirmation";
+import RepCounter from "../RepCounter";
+import Confirmation from "../Confirmation/Confirmation";
 import { useState } from "react";
 const StyledModal = styled.div`
   width: 600px;
