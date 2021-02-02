@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import SaveButton from "./SaveButton";
+import SaveButton from "../SaveButton";
 const StyledModal = styled.div`
   width: 450px;
   height: 450px;

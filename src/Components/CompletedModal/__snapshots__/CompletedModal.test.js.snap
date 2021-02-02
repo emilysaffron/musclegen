@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CompletedModal Snapshot 1`] = `
+<div
+  className="css-1uxov8o"
+>
+  <a
+    aria-current="page"
+    href="/"
+    onClick={[Function]}
+  >
+    <div
+      className="css-ov1ktg"
+    >
+      <button
+        className="css-ljtnwa"
+        onClick={[Function]}
+      >
+        Save Workout
+      </button>
+      <button
+        className="css-ljtnwa"
+        onClick={[Function]}
+      >
+        Don't Save
+      </button>
+    </div>
+  </a>
+</div>
+`;

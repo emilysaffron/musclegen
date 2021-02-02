@@ -6,7 +6,7 @@ import NextPrevButtons from "../Components/NextPrevButtons";
 import quit from "../quit.png";
 import React from "react";
 import { Link } from "@reach/router";
-import CompletedModal from "../Components/CompletedModal";
+import CompletedModal from "../Components/CompletedModal/CompletedModal";
 import tick from "../tick.png";
 const Display = styled.div`
   background: #a8bbce;
