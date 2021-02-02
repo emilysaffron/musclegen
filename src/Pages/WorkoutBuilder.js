@@ -1,6 +1,6 @@
 import FetchBodyHalf from "../Helpers/FetchBodyHalf";
 import ExerciseModal from "../Components/ExerciseModal/ExerciseModal";
-import ConvertLabel from "../Helpers/ConvertLabel";
+import ConvertLabel from "../Helpers/ConvertLabel/ConvertLabel";
 import ExerciseList from "../Components/ExerciseList/ExerciseList";
 import WorkoutPlan from "../Components/WorkoutPlan/WorkoutPlan";
 import styled from "@emotion/styled";
