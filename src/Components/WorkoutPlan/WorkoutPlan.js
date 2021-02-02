@@ -1,10 +1,10 @@
 /* eslint-disable array-callback-return */
 import React, { useContext } from "react";
-import { CurrentPlanContext } from "../Helpers/CurrentPlanContext";
-import setWorkoutPlan from "../Helpers/SetWorkoutPlan";
+import { CurrentPlanContext } from "../../Helpers/CurrentPlanContext";
+import setWorkoutPlan from "../../Helpers/SetWorkoutPlan";
 import styled from "@emotion/styled";
 
-import StartStopButton from "./StartStopButton/StartStopButton";
+import StartStopButton from "../StartStopButton/StartStopButton";
 
 const StyledPlan = styled.ul`
   background: #cea8bb;

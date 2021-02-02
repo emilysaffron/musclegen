@@ -2,7 +2,7 @@ import FetchBodyHalf from "../Helpers/FetchBodyHalf";
 import ExerciseModal from "../Components/ExerciseModal/ExerciseModal";
 import ConvertLabel from "../Helpers/ConvertLabel";
 import ExerciseList from "../Components/ExerciseList/ExerciseList";
-import WorkoutPlan from "../Components/WorkoutPlan";
+import WorkoutPlan from "../Components/WorkoutPlan/WorkoutPlan";
 import styled from "@emotion/styled";
 import { useState, useEffect } from "react";
 const StyledPage = styled.div`
