@@ -1,4 +1,4 @@
-import Exercise from "../Components/Exercise";
+import Exercise from "../Components/Exercise/Exercise";
 
 const GetExerciseNames = (
   exercises,
