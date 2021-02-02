@@ -2,7 +2,7 @@ import { CurrentPlanContext } from "../Helpers/CurrentPlanContext";
 import MakeObjects from "../Helpers/MakeObjects";
 import { useState, useContext, useEffect } from "react";
 import styled from "@emotion/styled";
-import NextPrevButtons from "../Components/NextPrevButtons";
+import NextPrevButtons from "../Components/NextPrevButtons/NextPrevButtons";
 import quit from "../quit.png";
 import React from "react";
 import { Link } from "@reach/router";

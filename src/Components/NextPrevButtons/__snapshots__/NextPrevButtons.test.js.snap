@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NextPrevButtons Snapshot 1`] = `
+Array [
+  <button
+    className="css-m31fz8"
+    onClick={[Function]}
+  >
+    Next
+  </button>,
+  <button
+    className="css-m31fz8"
+    onClick={[Function]}
+  >
+    Previous
+  </button>,
+]
+`;
