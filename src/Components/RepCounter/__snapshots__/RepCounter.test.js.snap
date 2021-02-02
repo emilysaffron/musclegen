@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RepCounter Snapshot 1`] = `
+<div
+  className="css-k46vyb"
+>
+  <div
+    className="css-ov1ktg"
+  >
+    <button
+      className="css-ikh6w2"
+      onClick={[Function]}
+    >
+      Increase Reps
+    </button>
+    <button
+      className="css-ikh6w2"
+      onClick={[Function]}
+    >
+      Decrease Reps
+    </button>
+  </div>
+  <div
+    className="css-nu9ioa"
+  >
+    1
+  </div>
+</div>
+`;

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import RepCounter from "../RepCounter";
+import RepCounter from "../RepCounter/RepCounter";
 import Confirmation from "../Confirmation/Confirmation";
 import { useState } from "react";
 const StyledModal = styled.div`
