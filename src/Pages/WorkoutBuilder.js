@@ -1,7 +1,7 @@
 import FetchBodyHalf from "../Helpers/FetchBodyHalf";
 import ExerciseModal from "../Components/ExerciseModal";
 import ConvertLabel from "../Helpers/ConvertLabel";
-import ExerciseList from "../Components/ExerciseList";
+import ExerciseList from "../Components/ExerciseList/ExerciseList";
 import WorkoutPlan from "../Components/WorkoutPlan";
 import styled from "@emotion/styled";
 import { useState, useEffect } from "react";

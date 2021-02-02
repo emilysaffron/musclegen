@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Exercise Snapshot 1`] = `
+<div
+  className="css-ov1ktg"
+>
+  <button
+    className="css-15i479a"
+    onClick={[Function]}
+  >
+    Filter Exercises
+  </button>
+  <ul
+    className="css-1oskuwq"
+  >
+    
+  </ul>
+</div>
+`;

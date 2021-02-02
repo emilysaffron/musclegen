@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import styled from "@emotion/styled";
-import GetExerciseNames from "../Helpers/GetExerciseNames";
+import GetExerciseNames from "../../Helpers/GetExerciseNames";
 import { useState, useEffect } from "react";
-import FilterModal from "./FilterModal";
+import FilterModal from "../FilterModal";
 
 const StyledList = styled.ul`
   display: flex;
