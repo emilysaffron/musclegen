@@ -1,4 +1,4 @@
-import FetchBodyHalf from "../Helpers/FetchBodyHalf";
+import FetchBodyHalf from "../Helpers/FetchBodyHalf/FetchBodyHalf";
 import ExerciseModal from "../Components/ExerciseModal/ExerciseModal";
 import ConvertLabel from "../Helpers/ConvertLabel/ConvertLabel";
 import ExerciseList from "../Components/ExerciseList/ExerciseList";

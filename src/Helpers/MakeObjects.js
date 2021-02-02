@@ -24,7 +24,6 @@ const MakeObjects = (
       }
 
       reps = words[indexOfFor + 1];
-      console.log("hi " + label);
       let obj = {
         date: date,
         label: label,

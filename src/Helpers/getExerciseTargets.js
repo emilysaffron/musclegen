@@ -1,5 +1,5 @@
 /* eslint-disable array-callback-return */
-import FetchBodyHalf from "./FetchBodyHalf";
+import FetchBodyHalf from "./FetchBodyHalf/FetchBodyHalf";
 import styled from "@emotion/styled";
 const StyledFilter = styled.button`
   display: flex;
