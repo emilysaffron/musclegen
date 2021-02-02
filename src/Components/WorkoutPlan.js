@@ -4,7 +4,7 @@ import { CurrentPlanContext } from "../Helpers/CurrentPlanContext";
 import setWorkoutPlan from "../Helpers/SetWorkoutPlan";
 import styled from "@emotion/styled";
 
-import StartStopButton from "./StartStopButton";
+import StartStopButton from "./StartStopButton/StartStopButton";
 
 const StyledPlan = styled.ul`
   background: #cea8bb;

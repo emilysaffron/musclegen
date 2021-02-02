@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StartStopButton Snapshot 1`] = `
+Array [
+  <a
+    href="/workout"
+    onClick={[Function]}
+  >
+    <button
+      className="css-1ezathv"
+      onClick="onClick"
+    >
+       Start
+    </button>
+  </a>,
+  <a
+    href="/label"
+    onClick={[Function]}
+  >
+    <button
+      className="css-1ezathv"
+      onClick="onClick"
+    >
+      Stop
+    </button>
+  </a>,
+]
+`;
