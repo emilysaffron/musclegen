@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import MenuButton from "../MenuButton";
+import MenuButton from "../MenuButton/MenuButton";
 
 const StyledButtons = styled.div`
   display: flex;

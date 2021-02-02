@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuButton Snapshot 1`] = `
+<a
+  href="/label"
+  onClick={[Function]}
+>
+  <button
+    className="css-gip7ia"
+  >
+    label
+  </button>
+</a>
+`;
