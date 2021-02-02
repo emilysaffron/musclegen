@@ -10,9 +10,7 @@ const StyledExercise = styled.button`
   border-radius: 20px;
   width: 385px;
   height: 50px;
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 `;
 
 const Exercise = ({

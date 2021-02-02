@@ -38,9 +38,7 @@ const StyledPage = styled.div`
 const Quit = styled.div`
   width: 40px;
   align-self: baseline;
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 `;
 const Names = styled.div`
   margin: auto;

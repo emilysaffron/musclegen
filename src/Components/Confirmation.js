@@ -6,11 +6,7 @@ const StyledButton = styled.button`
   height: 90px;
   padding: 20px;
   margin: 10px;
-  font-family: Palatino, URW Palladio L, serif;
-  color: black;
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
   outline: none;
 `;
 

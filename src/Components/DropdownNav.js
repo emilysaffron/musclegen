@@ -10,18 +10,8 @@ const StyledModal = styled.div`
 `;
 
 const OpenMenu = styled.div`
-  /* Is this font specific to the 'OPTIONS' text? If so fine, but if not you could apply this font-family value at a higher level, i.e.
-  html {
-    span {
-      font-family: Palatino, URW Palladio L, serif;
-    }
-  }
-   */
-  font-family: Palatino, URW Palladio L, serif;
   font-size: 20px;
-  color: black;
   cursor: pointer;
-
   align-self: baseline;
   align-items: center;
   flex-direction: column;

@@ -5,9 +5,7 @@ const ControlButton = styled.button`
   width: 50px;
   height: 25px;
   border-radius: 50%;
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 `;
 
 const StartStopButton = ({ control, label, onClick }) => {

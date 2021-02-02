@@ -11,11 +11,7 @@ const StyledButton = styled.button`
   padding: 20px;
   margin: 10px;
   font-size: 20px;
-  font-family: Palatino, URW Palladio L, serif;
-  color: black;
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
   outline: none;
 `;
 

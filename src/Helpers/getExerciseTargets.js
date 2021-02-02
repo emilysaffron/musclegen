@@ -10,9 +10,7 @@ const StyledFilter = styled.button`
   align-items: center;
   border-radius: 20px;
   width: max-content;
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 `;
 
 const getExerciseTargets = (filterExercises, half) => {
