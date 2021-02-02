@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import WriteUserData from "../Helpers/WriteUserData";
+import WriteUserData from "../../Helpers/WriteUserData";
 import { Link } from "@reach/router";
 const StyledButton = styled.button`
   border-radius: 20px;
