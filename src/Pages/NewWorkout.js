@@ -1,4 +1,4 @@
-import Menu from "../Components/Menu";
+import Menu from "../Components/Menu/Menu";
 import styled from "@emotion/styled";
 
 const StyledMenu = styled.div`

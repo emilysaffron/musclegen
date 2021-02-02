@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import Menu from "../Menu";
+import Menu from "../Menu/Menu";
 import { useState } from "react";
 const StyledModal = styled.div`
   display: flex;
