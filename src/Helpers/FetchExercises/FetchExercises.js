@@ -1,5 +1,5 @@
 const FetchExercises = () => {
-  let data = require("../Data/exercises.json");
+  let data = require("../../Data/exercises.json");
   let exercises = data.body;
 
   return exercises;

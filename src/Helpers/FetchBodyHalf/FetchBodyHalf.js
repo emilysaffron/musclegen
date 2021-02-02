@@ -1,4 +1,4 @@
-import FetchExercises from "../FetchExercises";
+import FetchExercises from "../FetchExercises/FetchExercises";
 const FetchBodyHalf = (half) => {
   let filteredExercises = [];
 
