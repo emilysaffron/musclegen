@@ -6,7 +6,7 @@ import PastWorkouts from "../Pages/PastWorkouts";
 import WorkoutBuilder from "../Pages/WorkoutBuilder";
 import Workout from "../Pages/Workout";
 import Videos from "../Pages/Videos";
-const createRoutes = () => {
+const fetchRoutes = () => {
   return (
     // Fragment can be used here rather than div
     <div>
@@ -60,4 +60,4 @@ const createRoutes = () => {
   );
 };
 
-export default createRoutes;
+export default fetchRoutes;
