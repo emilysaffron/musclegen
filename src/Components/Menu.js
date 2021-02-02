@@ -1,15 +1,19 @@
 import styled from "@emotion/styled";
-// This is just a simple mapping function, only used by one component - it doesn't need to be a helper
-import GetButtonNames from "../Helpers/GetButtonNames";
+import MenuButton from "./MenuButton";
+
 const StyledButtons = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
 `;
 
-const Menu = ({ labels, use }) => {
-  // This is actually returning Button components, rather than just their names (which suggests string values) - consider renaming.
-  const buttons = GetButtonNames(labels, use);
+const Menu = ({ labels, dropdown}) => {
+  const GetMenuButtons = (labels, dropdown) => {
+    return labels.map((item) => (
+      <MenuButton label={item} key={item} dropdown={dropdown} />
+    ));
+  };
+  const buttons = GetMenuButtons(labels, dropdown);
   return <StyledButtons>{buttons}</StyledButtons>;
 };
 

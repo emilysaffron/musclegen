@@ -9,7 +9,7 @@ const StyledMenu = styled.div`
 const NewWorkout = () => {
   return (
     <StyledMenu>
-      <Menu labels={["Upper Body", "Lower Body"]} use="normal" />
+      <Menu labels={["Upper Body", "Lower Body"]} dropdown={false} />
     </StyledMenu>
   );
 };

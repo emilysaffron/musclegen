@@ -43,7 +43,7 @@ const DropDownNav = () => {
         <StyledModal>
           <Menu
             labels={["Home", "New Workout", "Past Workouts", "Links"]}
-            use="dropdown"
+            dropdown={true}
           />
         </StyledModal>
       ) : null}

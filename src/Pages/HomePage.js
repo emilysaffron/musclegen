@@ -10,7 +10,10 @@ const StyledHome = styled.div`
 const HomePage = () => {
   return (
     <StyledHome>
-      <Menu labels={["New Workout", "Past Workouts", "Links"]} use="normal" />
+      <Menu
+        labels={["New Workout", "Past Workouts", "Links"]}
+        dropdown={false}
+      />
     </StyledHome>
   );
 };
