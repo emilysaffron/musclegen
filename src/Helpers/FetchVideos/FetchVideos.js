@@ -1,5 +1,5 @@
 const FetchVideos = () => {
-  let data = require("../Data/videos.json");
+  let data = require("../../Data/videos.json");
   let videos = data.body;
 
   return videos;

@@ -1,4 +1,4 @@
-import FetchVideos from "../Helpers/FetchVideos";
+import FetchVideos from "../Helpers/FetchVideos/FetchVideos";
 import styled from "@emotion/styled";
 import { useState } from "react";
 
