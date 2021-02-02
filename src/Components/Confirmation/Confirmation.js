@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import AddExercise from "../Helpers/AddExercise";
+import AddExercise from "../../Helpers/AddExercise";
 const StyledButton = styled.button`
   border-radius: 20px;
   width: 150px;

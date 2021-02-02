@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirmation Snapshot 1`] = `
+<div
+  className="css-ov1ktg"
+>
+  <button
+    className="css-ljtnwa"
+    onClick={[Function]}
+  >
+    add to plan
+  </button>
+  <button
+    className="css-ljtnwa"
+    onClick={[Function]}
+  >
+    cancel
+  </button>
+</div>
+`;
