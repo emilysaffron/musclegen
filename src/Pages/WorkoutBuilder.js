@@ -5,6 +5,7 @@ import ExerciseList from "../Components/ExerciseList/ExerciseList";
 import WorkoutPlan from "../Components/WorkoutPlan/WorkoutPlan";
 import styled from "@emotion/styled";
 import { useState, useEffect } from "react";
+import EditExerciseModal from "../Components/EditExerciseModal/EditExerciseModal";
 const StyledPage = styled.div`
   display: flex;
   justify-content: center;
@@ -16,6 +17,10 @@ const WorkoutBuilder = ({ label }) => {
   const [modal, toggleModal] = useState(false);
   const [chosenExercise, updateChosenExercise] = useState("");
   const [workoutPlan, AddToWorkoutPlan] = useState(["", ""]);
+  const [edit, ToggleEdit] = useState(false);
+  const [Exercise, SelectExercise] = useState("");
+  const [Item, CurrentItem] = useState("");
+  const [items, updateItems] = useState("");
 
   useEffect(() => {
     fetchFilteredExercises(FetchBodyHalf(half));
@@ -29,6 +34,17 @@ const WorkoutBuilder = ({ label }) => {
         modal={modal}
         updateChosenExercise={updateChosenExercise}
         half={half}
+      />
+      <EditExerciseModal
+        modal={edit}
+        exercise={Exercise}
+        Item={Item}
+        toggleModal={ToggleEdit}
+        toggleShowExerciseModal={modal}
+        showExerciseModal={toggleModal}
+        AddToWorkoutPlan={AddToWorkoutPlan}
+        workoutPlan={workoutPlan}
+        updateItems={updateItems}
       />
 
       <ExerciseModal
@@ -44,6 +60,12 @@ const WorkoutBuilder = ({ label }) => {
         label={label}
         workoutPlan={workoutPlan}
         AddToWorkoutPlan={AddToWorkoutPlan}
+        CurrentItem={CurrentItem}
+        SelectExercise={SelectExercise}
+        ToggleEdit={ToggleEdit}
+        edit={edit}
+        updateItems={updateItems}
+        items={items}
       />
     </StyledPage>
   );

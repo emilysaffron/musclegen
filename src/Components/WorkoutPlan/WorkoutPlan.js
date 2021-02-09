@@ -44,14 +44,18 @@ const StyledHeading = styled.li`
   padding: 15px;
 `;
 
-const WorkoutPlan = ({ label, workoutPlan, AddToWorkoutPlan }) => {
+const WorkoutPlan = ({
+  label,
+  workoutPlan,
+  AddToWorkoutPlan,
+  CurrentItem,
+  SelectExercise,
+  ToggleEdit,
+  edit,
+  updateItems,
+  items,
+}) => {
   const { currentPlan, setCurrentPlan } = useContext(CurrentPlanContext);
-  const [edit, ToggleEdit] = useState(false);
-  const [showExerciseModal, toggleShowExerciseModal] = useState(false);
-  const [Exercise, SelectExercise] = useState("");
-  const [Item, CurrentItem] = useState("");
-  const [repNumber, SelectedRepNumber] = useState(0);
-  const [items, updateItems] = useState("");
   const Edit = (item) => {
     CurrentItem(item);
     let words = item.split(" ");
@@ -62,7 +66,7 @@ const WorkoutPlan = ({ label, workoutPlan, AddToWorkoutPlan }) => {
     }
 
     SelectExercise(name);
-    SelectedRepNumber(words[indexOfFor + 1]);
+
     ToggleEdit(!edit);
   };
 
@@ -82,40 +86,19 @@ const WorkoutPlan = ({ label, workoutPlan, AddToWorkoutPlan }) => {
   }, [workoutPlan, edit]);
 
   return (
-    <div>
-      <StyledPlan>
-        <StyledHeading>{label} Plan</StyledHeading>
+    <StyledPlan>
+      <StyledHeading>{label} Plan</StyledHeading>
 
-        {items}
+      {items}
 
-        <StartStopButton
-          control="start"
-          label={label}
-          onClick={() =>
-            setWorkoutPlan(workoutPlan, { currentPlan, setCurrentPlan })
-          }
-        />
-        <EditExerciseModal
-          modal={edit}
-          exercise={Exercise}
-          Item={Item}
-          toggleModal={ToggleEdit}
-          toggleShowExerciseModal={toggleShowExerciseModal}
-          showExerciseModal={showExerciseModal}
-          AddToWorkoutPlan={AddToWorkoutPlan}
-          workoutPlan={workoutPlan}
-          updateItems={updateItems}
-        />
-        <ExerciseModal
-          modal={showExerciseModal}
-          exercise={Exercise}
-          toggleModal={toggleShowExerciseModal}
-          AddToWorkoutPlan={AddToWorkoutPlan}
-          workoutPlan={workoutPlan}
-          currentRepNumber={repNumber}
-        />
-      </StyledPlan>
-    </div>
+      <StartStopButton
+        control="start"
+        label={label}
+        onClick={() =>
+          setWorkoutPlan(workoutPlan, { currentPlan, setCurrentPlan })
+        }
+      />
+    </StyledPlan>
   );
 };
 
