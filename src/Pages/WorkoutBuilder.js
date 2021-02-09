@@ -40,8 +40,8 @@ const WorkoutBuilder = ({ label }) => {
         exercise={Exercise}
         Item={Item}
         toggleModal={ToggleEdit}
-        toggleShowExerciseModal={modal}
-        showExerciseModal={toggleModal}
+        toggleShowExerciseModal={toggleModal}
+        showExerciseModal={modal}
         AddToWorkoutPlan={AddToWorkoutPlan}
         workoutPlan={workoutPlan}
         updateItems={updateItems}

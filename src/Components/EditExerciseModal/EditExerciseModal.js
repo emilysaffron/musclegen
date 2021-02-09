@@ -37,7 +37,7 @@ const EditExerciseModal = ({
   workoutPlan,
   updateItems,
 }) => {
-  const clicked = () => {
+  const clicked = (edit) => {
     let index = workoutPlan.indexOf(Item);
     var items = workoutPlan;
 
@@ -48,14 +48,16 @@ const EditExerciseModal = ({
     AddToWorkoutPlan(items);
     updateItems(items);
     toggleModal(!modal);
-    /*  
-    toggleShowExerciseModal(!showExerciseModal); */
+    if (edit) {
+      toggleShowExerciseModal(!showExerciseModal);
+    }
   };
   return modal ? (
     <StyledModal>
       {exercise}
       <ButtonsContainer>
-        <StyledButton onClick={() => clicked()} />
+        <StyledButton onClick={() => clicked(false)}>Remove</StyledButton>
+        <StyledButton onClick={() => clicked(true)}>Edit</StyledButton>
       </ButtonsContainer>
     </StyledModal>
   ) : null;
