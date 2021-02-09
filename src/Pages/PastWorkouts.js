@@ -37,18 +37,22 @@ const PastWorkouts = () => {
 
   return fetched ? (
     <StyledPage>
-      {Object.keys(pastWorkouts).map((key) => {
-        const value = pastWorkouts[key];
+      {pastWorkouts.length > 0 ? (
+        Object.keys(pastWorkouts).map((key) => {
+          const value = pastWorkouts[key];
 
-        // eslint-disable-next-line array-callback-return
+          // eslint-disable-next-line array-callback-return
 
-        return (
-          <StyledPlan key={key + 2}>
-            <div> {getPastPlanLabel(value)}</div>
-            <div>{getPastPlan(value)}</div>
-          </StyledPlan>
-        );
-      })}
+          return (
+            <StyledPlan key={key + 2}>
+              <div> {getPastPlanLabel(value)}</div>
+              <div>{getPastPlan(value)}</div>
+            </StyledPlan>
+          );
+        })
+      ) : (
+        <>No Workouts Recorded</>
+      )}
     </StyledPage>
   ) : (
     <StyledPage>loading...</StyledPage>
