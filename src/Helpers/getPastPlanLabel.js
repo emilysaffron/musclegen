@@ -13,7 +13,7 @@ const getPastPlanLabel = (value) => {
   let date = "";
   let keys = "";
   return (
-    <div key>
+    <div>
       {Object.keys(value).map((key) => {
         keys = key;
 
