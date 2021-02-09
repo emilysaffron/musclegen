@@ -55,7 +55,7 @@ const Videos = () => {
       let title = item.title;
       let src = item.src;
       return (
-        <StyledPage>
+        <StyledPage key={Math.random()}>
           <StyledTitle onClick={() => clickedLink(src)}>{title}</StyledTitle>
         </StyledPage>
       );

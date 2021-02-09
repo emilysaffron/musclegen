@@ -44,8 +44,8 @@ const PastWorkouts = () => {
 
         return (
           <StyledPlan key={key + 2}>
-            <div key={key + 1}> {getPastPlanLabel(value)}</div>
-            <div key={key}>{getPastPlan(value)}</div>
+            <div> {getPastPlanLabel(value)}</div>
+            <div>{getPastPlan(value)}</div>
           </StyledPlan>
         );
       })}

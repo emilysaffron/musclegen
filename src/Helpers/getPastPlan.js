@@ -25,7 +25,7 @@ const getPastPlan = (value) => {
         <StyledHeading key={key + 3}> {item.label}Plan</StyledHeading>;
 
         return (
-          <div>
+          <div key={Math.random()}>
             <StyledItems key={key}>
               {item.name} for {item.reps} reps
             </StyledItems>
