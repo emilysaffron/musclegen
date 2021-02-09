@@ -1,11 +1,11 @@
 /* eslint-disable array-callback-return */
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CurrentPlanContext } from "../../Helpers/CurrentPlanContext";
 import setWorkoutPlan from "../../Helpers/SetWorkoutPlan";
 import styled from "@emotion/styled";
-
 import StartStopButton from "../StartStopButton/StartStopButton";
-
+import EditExerciseModal from "../EditExerciseModal/EditExerciseModal";
+import ExerciseModal from "../ExerciseModal/ExerciseModal";
 const StyledPlan = styled.ul`
   background: #cea8bb;
   display: flex;
@@ -32,6 +32,10 @@ const StyledItems = styled.li`
   display: flex;
   flex-direction: column;
   padding: 8px;
+  cursor: pointer;
+  &:hover {
+    background-color: #b090a0;
+  }
 `;
 const StyledHeading = styled.li`
   list-style: none;
@@ -40,18 +44,49 @@ const StyledHeading = styled.li`
   padding: 15px;
 `;
 
-const WorkoutPlan = ({ label, workoutPlan }) => {
+const WorkoutPlan = ({ label, workoutPlan, AddToWorkoutPlan }) => {
   const { currentPlan, setCurrentPlan } = useContext(CurrentPlanContext);
+  const [edit, ToggleEdit] = useState(false);
+  const [showExerciseModal, toggleShowExerciseModal] = useState(false);
+  const [Exercise, SelectExercise] = useState("");
+  const [Item, CurrentItem] = useState("");
+  const [repNumber, SelectedRepNumber] = useState(0);
+  const [items, updateItems] = useState("");
+  const Edit = (item) => {
+    CurrentItem(item);
+    let words = item.split(" ");
+    let name = "";
+    let indexOfFor = words.indexOf("for");
+    for (let i = 0; i < indexOfFor; i++) {
+      name = name + " " + words[i];
+    }
+
+    SelectExercise(name);
+    SelectedRepNumber(words[indexOfFor + 1]);
+    ToggleEdit(!edit);
+  };
+
+  useEffect(() => {
+    updateItems(
+      workoutPlan.map((item) => {
+        if (item !== "") {
+          return (
+            <StyledItems key={item} onClick={() => Edit(item)}>
+              {item}
+            </StyledItems>
+          );
+        }
+      })
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [workoutPlan, edit]);
 
   return (
     <div>
       <StyledPlan>
         <StyledHeading>{label} Plan</StyledHeading>
-        {workoutPlan.map((item) => {
-          if (item !== "") {
-            return <StyledItems key={item}>{item}</StyledItems>;
-          }
-        })}
+
+        {items}
 
         <StartStopButton
           control="start"
@@ -59,6 +94,25 @@ const WorkoutPlan = ({ label, workoutPlan }) => {
           onClick={() =>
             setWorkoutPlan(workoutPlan, { currentPlan, setCurrentPlan })
           }
+        />
+        <EditExerciseModal
+          modal={edit}
+          exercise={Exercise}
+          Item={Item}
+          toggleModal={ToggleEdit}
+          toggleShowExerciseModal={toggleShowExerciseModal}
+          showExerciseModal={showExerciseModal}
+          AddToWorkoutPlan={AddToWorkoutPlan}
+          workoutPlan={workoutPlan}
+          updateItems={updateItems}
+        />
+        <ExerciseModal
+          modal={showExerciseModal}
+          exercise={Exercise}
+          toggleModal={toggleShowExerciseModal}
+          AddToWorkoutPlan={AddToWorkoutPlan}
+          workoutPlan={workoutPlan}
+          currentRepNumber={repNumber}
         />
       </StyledPlan>
     </div>

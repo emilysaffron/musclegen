@@ -37,9 +37,14 @@ const WorkoutBuilder = ({ label }) => {
         toggleModal={toggleModal}
         AddToWorkoutPlan={AddToWorkoutPlan}
         workoutPlan={workoutPlan}
+        currentRepNumber={0}
       />
 
-      <WorkoutPlan label={label} workoutPlan={workoutPlan} />
+      <WorkoutPlan
+        label={label}
+        workoutPlan={workoutPlan}
+        AddToWorkoutPlan={AddToWorkoutPlan}
+      />
     </StyledPage>
   );
 };
