@@ -5,7 +5,6 @@ import styled from "@emotion/styled";
 import getPastPlanLabel from "../Helpers/getPastPlanLabel";
 import { CurrentPlanContext } from "../Helpers/CurrentPlanContext";
 import StartStopButton from "../Components/StartStopButton/StartStopButton";
-import setWorkoutPlan from "../Helpers/SetWorkoutPlan";
 const StyledPage = styled.div`
   display: flex;
   justify-content: center;
@@ -26,26 +25,9 @@ const StyledPlan = styled.ul`
   height: max-content;
   border: 2px solid black;
 `;
-const StyledItems = styled.li`
-  list-style: none;
-  font-size: 12px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  padding: 8px;
-`;
-
-const StyledHeading = styled.li`
-  list-style: none;
-  align-items: center;
-  text-decoration: underline;
-  padding: 15px;
-`;
 
 const PastWorkouts = ({ label }) => {
-  const { currentPlan, setCurrentPlan } = useContext(CurrentPlanContext);
+  const { setCurrentPlan } = useContext(CurrentPlanContext);
 
   const [pastWorkouts, updatePastWorkouts] = useState([]);
   const [fetched, dataIsFetched] = useState(false);
