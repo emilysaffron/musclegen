@@ -1,6 +1,5 @@
 import { Router, Redirect } from "@reach/router";
 import HomePage from "../Pages/HomePage";
-import Links from "../Pages/Links";
 import NewWorkout from "../Pages/NewWorkout";
 import PastWorkouts from "../Pages/PastWorkouts";
 import WorkoutBuilder from "../Pages/WorkoutBuilder";
@@ -11,9 +10,6 @@ const fetchRoutes = () => {
     <>
       <Router>
         <HomePage path={"/"} />
-      </Router>
-      <Router>
-        <Links exact path={"/links"} />
       </Router>
       <Router>
         <NewWorkout exact path={"/new-workout"} />
@@ -34,7 +30,7 @@ const fetchRoutes = () => {
         <Workout path={"/new-workout/lower-body/workout"} label="LowerBody" />
       </Router>
       <Router>
-        <Videos path={"/links/videos"} />
+        <Videos path={"/videos"} />
       </Router>
       <Router>
         <Redirect noThrow from="/home" to={"/"} />
