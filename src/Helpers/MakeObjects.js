@@ -34,7 +34,7 @@ const MakeObjects = (
     }
   });
   updateMaxExerciseNumber(objArr.length);
-
+  
   return objArr;
 };
 

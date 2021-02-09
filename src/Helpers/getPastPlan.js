@@ -17,8 +17,8 @@ const StyledHeading = styled.li`
   padding: 15px;
 `;
 
-const getPastPlan = (value) => {
-  return (
+const getPastPlan = (value, styled) => {
+  return styled ? (
     <div>
       {Object.keys(value).map((key) => {
         const item = value[key];
@@ -33,6 +33,13 @@ const getPastPlan = (value) => {
         );
       })}
     </div>
+  ) : (
+    Object.keys(value).map((key) => {
+      const item = value[key];
+
+      let plan = item.name + " for " + item.reps + " reps ";
+      return plan;
+    })
   );
 };
 

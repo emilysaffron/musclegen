@@ -1,6 +1,5 @@
 const setWorkoutPlan = (workoutPlan, { currentPlan, setCurrentPlan }) => {
   setCurrentPlan(workoutPlan);
-
   return currentPlan;
 };
 

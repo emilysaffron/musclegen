@@ -15,13 +15,16 @@ const fetchRoutes = () => {
         <NewWorkout exact path={"/new-workout"} />
       </Router>
       <Router>
-        <PastWorkouts exact path={"/past-workouts"} />
+        <PastWorkouts exact path={"/past-workouts"} label="PastWorkouts" />
       </Router>
       <Router>
         <WorkoutBuilder path={"/new-workout/upper-body"} label="UpperBody" />
       </Router>
       <Router>
         <WorkoutBuilder path={"/new-workout/lower-body"} label="LowerBody" />
+      </Router>
+      <Router>
+        <Workout path={"/past-workouts/workout"} label="PastWorkouts" />
       </Router>
       <Router>
         <Workout path={"/new-workout/upper-body/workout"} label="UpperBody" />
@@ -47,6 +50,13 @@ const fetchRoutes = () => {
           noThrow
           from="/new-workout/lower-body/workout/lowerbody"
           to={"/new-workout/lower-body"}
+        />
+      </Router>
+      <Router>
+        <Redirect
+          noThrow
+          from="/past-workouts/workout/pastworkouts"
+          to={"/past-workouts"}
         />
       </Router>
     </>

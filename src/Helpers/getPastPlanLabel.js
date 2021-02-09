@@ -19,6 +19,7 @@ const getPastPlanLabel = (value) => {
 
         const item = value[key];
         label = item.label;
+
         date = item.date;
       })}
       <StyledHeading key={keys}>
