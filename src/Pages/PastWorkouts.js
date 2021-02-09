@@ -37,7 +37,7 @@ const PastWorkouts = () => {
 
   return fetched ? (
     <StyledPage>
-      {pastWorkouts.length > 0 ? (
+      {pastWorkouts.length !== 0 ? (
         Object.keys(pastWorkouts).map((key) => {
           const value = pastWorkouts[key];
 
