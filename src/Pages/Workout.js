@@ -78,7 +78,7 @@ const Workout = ({ label }) => {
     <StyledPage>
       <Display>
         <Quit>
-          <Link to={`${labelWithoutWhitespace.toLowerCase()}`}>
+          <Link to={`/`}>
             <img width="40px" src={quit} alt="quit" />
           </Link>
         </Quit>
