@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import AddExercise from "../../Helpers/AddExercise";
+
 const StyledButton = styled.button`
   border-radius: 20px;
   width: 150px;
@@ -26,7 +26,15 @@ const Confirmation = ({
     toggleModal(!modal);
   };
   const handleConfirmClick = () => {
-    AddExercise(exercise, repNumber, AddToWorkoutPlan, workoutPlan);
+    let currentWorkoutPlan = workoutPlan.slice();
+    let index = currentWorkoutPlan.indexOf(
+      exercise + " for " + repNumber + " rep(s)"
+    );
+
+    if (index === -1) {
+      currentWorkoutPlan.push(exercise + " for " + repNumber + " rep(s)");
+    }
+    AddToWorkoutPlan(currentWorkoutPlan);
 
     toggleModal(!modal);
   };
