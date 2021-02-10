@@ -60,7 +60,7 @@ const Workout = ({ label }) => {
   const [maxExerciseNumber, updateMaxExerciseNumber] = useState(0);
   const [filledPlan, updateFilledPlan] = useState(false);
   const [completedModal, toggleCompletedModal] = useState(false);
-  const [quit, toggleQuit] = useState(false);
+  const [quitCurrentWorkout, toggleQuitCurrentWorkout] = useState(false);
   useEffect(() => {
     if (currentPlan) {
       setCurrentPlan(
@@ -76,11 +76,11 @@ const Workout = ({ label }) => {
   }, []);
 
   const quitWorkout = () => {
-    toggleQuit(!quit);
+    toggleQuitCurrentWorkout(!quitCurrentWorkout);
     setCurrentPlan(null);
   };
 
-  return filledPlan && !quit ? (
+  return filledPlan && !quitCurrentWorkout ? (
     <StyledPage>
       <Display>
         <Quit onClick={() => quitWorkout()}>
