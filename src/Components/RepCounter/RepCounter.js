@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import UpdateReps from "../../Helpers/UpdateReps";
+
 const StyledReps = styled.div`
   display: flex;
   flex-direction: column;
@@ -41,7 +41,14 @@ const StyledNum = styled.div`
 
 const RepCounter = ({ repNumber, updateRepNumber }) => {
   const handleClick = (operation) => {
-    UpdateReps(updateRepNumber, repNumber, operation);
+    if (operation === "plus") {
+      updateRepNumber(repNumber + 1);
+    }
+    if (operation === "minus") {
+      if (repNumber > 0) {
+        updateRepNumber(repNumber - 1);
+      }
+    }
   };
 
   return (
