@@ -5,6 +5,8 @@ import styled from "@emotion/styled";
 import getPastPlanLabel from "../Helpers/getPastPlanLabel";
 import { CurrentPlanContext } from "../Helpers/CurrentPlanContext";
 import StartStopButton from "../Components/StartStopButton/StartStopButton";
+import { Link } from "@reach/router";
+
 const StyledPage = styled.div`
   display: flex;
   justify-content: center;
@@ -26,6 +28,18 @@ const StyledPlan = styled.ul`
   border: 2px solid black;
 `;
 
+const Buttons = styled.div`
+  display: flex;
+`;
+
+const EditButton = styled.button`
+  width: 50px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 5px;
+`;
+
 const PastWorkouts = ({ label }) => {
   const { setCurrentPlan } = useContext(CurrentPlanContext);
 
@@ -44,19 +58,33 @@ const PastWorkouts = ({ label }) => {
       {pastWorkouts.length !== 0 ? (
         Object.keys(pastWorkouts).map((key) => {
           const value = pastWorkouts[key];
-          console.log(getPastPlanLabel(value, false));
-          console.log(value);
-          // eslint-disable-next-line array-callback-return
+          let label = getPastPlanLabel(value, false);
+
+          if (label === "UpperBody") {
+            label = "upper-body";
+          }
+          if (label === "LowerBody") {
+            label = "lower-body";
+          }
 
           return (
             <StyledPlan key={key + 2}>
               <div> {getPastPlanLabel(value, true)}</div>
               <div>{getPastPlan(value, true)}</div>
-              <StartStopButton
-                control="start"
-                label={label}
-                onClick={() => setCurrentPlan(getPastPlan(value, false))}
-              />
+              <Buttons>
+                <StartStopButton
+                  control="start"
+                  label={label}
+                  onClick={() => setCurrentPlan(getPastPlan(value, false))}
+                />
+                <Link to={`/new-workout/${label}`}>
+                  <EditButton
+                    onClick={() => setCurrentPlan(getPastPlan(value, false))}
+                  >
+                    Edit
+                  </EditButton>
+                </Link>
+              </Buttons>
             </StyledPlan>
           );
         })

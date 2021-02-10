@@ -8,24 +8,20 @@ const StyledHeading = styled.li`
   padding: 15px;
 `;
 
-const getPastPlanLabel = (value) => {
+const getPastPlanLabel = (value, styled) => {
   let label = "";
   let date = "";
   let keys = "";
-  return (
-    <div>
-      {Object.keys(value).map((key) => {
-        keys = key;
+  let item = value[0];
 
-        const item = value[key];
-        label = item.label;
-
-        date = item.date;
-      })}
-      <StyledHeading key={keys}>
-        {label} - on {date}
-      </StyledHeading>
-    </div>
+  label = item.label;
+  date = item.date;
+  return styled ? (
+    <StyledHeading key={keys}>
+      {label} - on {date}
+    </StyledHeading>
+  ) : (
+    label
   );
 };
 

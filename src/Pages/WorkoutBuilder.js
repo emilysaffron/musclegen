@@ -4,14 +4,17 @@ import ConvertLabel from "../Helpers/ConvertLabel/ConvertLabel";
 import ExerciseList from "../Components/ExerciseList/ExerciseList";
 import WorkoutPlan from "../Components/WorkoutPlan/WorkoutPlan";
 import styled from "@emotion/styled";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import EditExerciseModal from "../Components/EditExerciseModal/EditExerciseModal";
+import { CurrentPlanContext } from "../Helpers/CurrentPlanContext";
+
 const StyledPage = styled.div`
   display: flex;
   justify-content: center;
 `;
 
 const WorkoutBuilder = ({ label }) => {
+  const { currentPlan } = useContext(CurrentPlanContext);
   const half = ConvertLabel(label);
   const [filteredExercises, fetchFilteredExercises] = useState("");
   const [modal, toggleModal] = useState(false);
@@ -24,7 +27,11 @@ const WorkoutBuilder = ({ label }) => {
 
   useEffect(() => {
     fetchFilteredExercises(FetchBodyHalf(half));
-  }, [half]);
+    if (currentPlan) {
+      console.log("HI " + currentPlan);
+      AddToWorkoutPlan(currentPlan);
+    }
+  }, [currentPlan, half]);
 
   return (
     <StyledPage>
