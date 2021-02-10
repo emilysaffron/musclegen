@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
-import WriteUserData from "../../Helpers/WriteUserData";
 import { Link } from "@reach/router";
 import { CurrentPlanContext } from "../../Helpers/CurrentPlanContext";
 import { useContext } from "react";
+import Firebase from "firebase";
+
 const StyledButton = styled.button`
   border-radius: 20px;
   width: 150px;
@@ -32,7 +33,7 @@ const SaveButton = ({
   };
 
   const handleConfirmClick = () => {
-    WriteUserData(currentPlan);
+    Firebase.database().ref("/").push(currentPlan);
     toggleModal(modal);
     toggleQuitCurrentWorkout(true);
     setCurrentPlan(null);
