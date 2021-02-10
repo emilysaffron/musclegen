@@ -111,6 +111,7 @@ const Workout = ({ label }) => {
         modal={completedModal}
         toggleModal={toggleCompletedModal}
         currentPlan={currentPlan}
+        toggleQuitCurrentWorkout={toggleQuitCurrentWorkout}
       />
       <FinishedButton
         onClick={() => toggleCompletedModal(!completedModal)}

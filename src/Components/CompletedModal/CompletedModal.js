@@ -13,13 +13,19 @@ const StyledModal = styled.div`
   flex-direction: column;
 `;
 
-const CompletedModal = ({ modal, toggleModal, currentPlan }) => {
+const CompletedModal = ({
+  modal,
+  toggleModal,
+  currentPlan,
+  toggleQuitCurrentWorkout,
+}) => {
   return modal ? (
     <StyledModal>
       <SaveButton
         modal={modal}
         toggleModal={toggleModal}
         currentPlan={currentPlan}
+        toggleQuitCurrentWorkout={toggleQuitCurrentWorkout}
       />
     </StyledModal>
   ) : null;
