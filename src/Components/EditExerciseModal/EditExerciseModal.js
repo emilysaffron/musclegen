@@ -21,6 +21,16 @@ const StyledButton = styled.button`
   cursor: pointer;
   outline: none;
 `;
+const StyledCancelButton = styled.button`
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  background: #cea8bb;
+`;
 
 const ButtonsContainer = styled.div`
   display: flex;
@@ -59,6 +69,9 @@ const EditExerciseModal = ({
         <StyledButton onClick={() => clicked(false)}>Remove</StyledButton>
         <StyledButton onClick={() => clicked(true)}>Edit</StyledButton>
       </ButtonsContainer>
+      <StyledCancelButton onClick={() => toggleModal(!modal)}>
+        Cancel
+      </StyledCancelButton>
     </StyledModal>
   ) : null;
 };
