@@ -39,6 +39,7 @@ const Quit = styled.div`
   width: 40px;
   align-self: baseline;
   cursor: pointer;
+  text-decoration: none;
 `;
 const Names = styled.div`
   margin: auto;
@@ -59,6 +60,7 @@ const Workout = ({ label }) => {
   const [maxExerciseNumber, updateMaxExerciseNumber] = useState(0);
   const [filledPlan, updateFilledPlan] = useState(false);
   const [completedModal, toggleCompletedModal] = useState(false);
+  const [quit, toggleQuit] = useState(false);
   useEffect(() => {
     if (currentPlan) {
       setCurrentPlan(
@@ -72,12 +74,16 @@ const Workout = ({ label }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(currentPlan);
 
-  return filledPlan ? (
+  const quitWorkout = () => {
+    toggleQuit(!quit);
+    setCurrentPlan(null);
+  };
+
+  return filledPlan && !quit ? (
     <StyledPage>
       <Display>
-        <Quit>
+        <Quit onClick={() => quitWorkout()}>
           <Link to={`/`}>
             <img width="40px" src={quit} alt="quit" />
           </Link>
