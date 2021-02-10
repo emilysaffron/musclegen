@@ -1,7 +1,6 @@
 /* eslint-disable array-callback-return */
 import React, { useContext, useEffect } from "react";
 import { CurrentPlanContext } from "../../Helpers/CurrentPlanContext";
-import setWorkoutPlan from "../../Helpers/SetWorkoutPlan";
 import styled from "@emotion/styled";
 import StartStopButton from "../StartStopButton/StartStopButton";
 
@@ -93,9 +92,7 @@ const WorkoutPlan = ({
       <StartStopButton
         control="start"
         label={label}
-        onClick={() =>
-          setWorkoutPlan(workoutPlan, { currentPlan, setCurrentPlan })
-        }
+        onClick={() => setCurrentPlan(workoutPlan)}
       />
     </StyledPlan>
   );
