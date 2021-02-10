@@ -14,7 +14,7 @@ Array [
     </button>
   </a>,
   <a
-    href="/label"
+    href="/bodytarget"
     onClick={[Function]}
   >
     <button

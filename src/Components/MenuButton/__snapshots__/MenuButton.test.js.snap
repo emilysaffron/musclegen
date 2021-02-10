@@ -2,13 +2,13 @@
 
 exports[`MenuButton Snapshot 1`] = `
 <a
-  href="/label"
+  href="/option"
   onClick={[Function]}
 >
   <button
     className="css-gip7ia"
   >
-    label
+    option
   </button>
 </a>
 `;

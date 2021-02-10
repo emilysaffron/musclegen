@@ -7,12 +7,12 @@ it("StartStopButton Snapshot", () => {
       <>
         <StartStopButton
           control="start"
-          bodyTarget="bodyTarget"
+          urlRoute="bodyTarget"
           onClick="onClick"
         />
         <StartStopButton
           control="stop"
-          bodyTarget="bodyTarget"
+          urlRoute="bodyTarget"
           onClick="onClick"
         />
       </>
