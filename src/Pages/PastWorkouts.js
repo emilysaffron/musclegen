@@ -44,10 +44,10 @@ const PastWorkouts = () => {
   const { setCurrentPlan } = useContext(CurrentPlanContext);
 
   const [pastWorkouts, updatePastWorkouts] = useState([]);
-  // getState/ setState naming mismat
   const [dataIsFetched, updateDataIsFetched] = useState(false);
   const [response, updateResponse] = useState("");
-  const getUserData = (dataIsFetched) => {
+
+  const getUserData = () => {
     let ref = Firebase.database().ref("/");
     ref.on("value", (snapshot) => {
       updateResponse(snapshot.val());
