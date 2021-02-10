@@ -5,7 +5,7 @@ const MakeObjects = (
   workoutPlan,
   updateMaxExerciseNumber,
   updateFilledPlan,
-  label
+  bodyTarget
 ) => {
   let objArr = [];
   let date = getDate();
@@ -26,7 +26,7 @@ const MakeObjects = (
       reps = words[indexOfFor + 1];
       let obj = {
         date: date,
-        label: label,
+        bodyTarget: bodyTarget,
         name: name,
         reps: reps,
       };
@@ -34,7 +34,7 @@ const MakeObjects = (
     }
   });
   updateMaxExerciseNumber(objArr.length);
-  
+
   return objArr;
 };
 

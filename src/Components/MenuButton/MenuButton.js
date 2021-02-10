@@ -23,15 +23,15 @@ const DropDownButton = styled.button`
   border: none;
 `;
 
-const MenuButton = ({ label, dropdown }) => {
-  const labelWithoutWhitespace = label.replace(/\s+/g, "-");
+const MenuButton = ({ option, dropdown }) => {
+  const urlRoute = option.replace(/\s+/g, "-");
 
   return (
-    <Link to={`${labelWithoutWhitespace.toLowerCase()}`}>
+    <Link to={`${urlRoute.toLowerCase()}`}>
       {dropdown ? (
-        <DropDownButton>{label}</DropDownButton>
+        <DropDownButton>{option}</DropDownButton>
       ) : (
-        <StyledButton>{label}</StyledButton>
+        <StyledButton>{option}</StyledButton>
       )}
     </Link>
   );

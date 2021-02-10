@@ -32,7 +32,7 @@ const DropDownNav = () => {
       {navState ? (
         <StyledModal>
           <Menu
-            labels={["Home", "New Workout", "Past Workouts", "Videos"]}
+            options={["Home", "New Workout", "Past Workouts", "Videos"]}
             dropdown={true}
           />
         </StyledModal>

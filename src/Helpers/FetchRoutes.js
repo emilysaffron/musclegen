@@ -15,22 +15,31 @@ const fetchRoutes = () => {
         <NewWorkout exact path={"/new-workout"} />
       </Router>
       <Router>
-        <PastWorkouts exact path={"/past-workouts"} label="PastWorkouts" />
+        <PastWorkouts exact path={"/past-workouts"} />
       </Router>
       <Router>
-        <WorkoutBuilder path={"/new-workout/upper-body"} label="UpperBody" />
+        <WorkoutBuilder
+          path={"/new-workout/upper-body"}
+          bodyTarget="UpperBody"
+        />
       </Router>
       <Router>
-        <WorkoutBuilder path={"/new-workout/lower-body"} label="LowerBody" />
+        <WorkoutBuilder
+          path={"/new-workout/lower-body"}
+          bodyTarget="LowerBody"
+        />
       </Router>
       <Router>
-        <Workout path={"/past-workouts/workout"} label="PastWorkouts" />
+        <Workout
+          path={"/new-workout/upper-body/workout"}
+          bodyTarget="UpperBody"
+        />
       </Router>
       <Router>
-        <Workout path={"/new-workout/upper-body/workout"} label="UpperBody" />
-      </Router>
-      <Router>
-        <Workout path={"/new-workout/lower-body/workout"} label="LowerBody" />
+        <Workout
+          path={"/new-workout/lower-body/workout"}
+          bodyTarget="LowerBody"
+        />
       </Router>
       <Router>
         <Videos path={"/videos"} />

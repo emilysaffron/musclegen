@@ -5,8 +5,16 @@ it("StartStopButton Snapshot", () => {
   const tree = renderer
     .create(
       <>
-        <StartStopButton control="start" label="label" onClick="onClick" />
-        <StartStopButton control="stop" label="label" onClick="onClick" />
+        <StartStopButton
+          control="start"
+          bodyTarget="bodyTarget"
+          onClick="onClick"
+        />
+        <StartStopButton
+          control="stop"
+          bodyTarget="bodyTarget"
+          onClick="onClick"
+        />
       </>
     )
     .toJSON();

@@ -21,8 +21,8 @@ const ExerciseList = ({
 }) => {
   const [filter, applyFilter] = useState("");
   const [names, updateNames] = useState("");
-  const filterExercises = (label) => {
-    applyFilter(label);
+  const filterExercises = (target) => {
+    applyFilter(target);
   };
   useEffect(() => {
     updateNames(

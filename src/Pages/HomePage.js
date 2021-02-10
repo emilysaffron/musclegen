@@ -11,7 +11,7 @@ const HomePage = () => {
   return (
     <StyledHome>
       <Menu
-        labels={["New Workout", "Past Workouts", "Videos"]}
+        options={["New Workout", "Past Workouts", "Videos"]}
         dropdown={false}
       />
     </StyledHome>

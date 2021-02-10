@@ -3,7 +3,6 @@ import getPastPlan from "../Helpers/getPastPlan";
 import styled from "@emotion/styled";
 import getPastPlanHeading from "../Helpers/getPastPlanHeading";
 import { CurrentPlanContext } from "../Helpers/CurrentPlanContext";
-import StartStopButton from "../Components/StartStopButton/StartStopButton";
 import { Link } from "@reach/router";
 import Firebase from "firebase";
 
@@ -33,11 +32,8 @@ const Buttons = styled.div`
 `;
 
 const EditButton = styled.button`
-  width: 50px;
-  height: 25px;
-  border-radius: 50%;
   cursor: pointer;
-  margin-left: 5px;
+  padding: 10px;
 `;
 
 const PastWorkouts = () => {
@@ -73,7 +69,7 @@ const PastWorkouts = () => {
           Object.keys(pastWorkouts).map((index) => {
             const workoutPlan = pastWorkouts[index];
             let exercise = workoutPlan[0];
-            let urlRoute = exercise.label;
+            let urlRoute = exercise.bodyTarget;
 
             if (urlRoute === "UpperBody") {
               urlRoute = "upper-body";
@@ -87,20 +83,13 @@ const PastWorkouts = () => {
                 <div> {getPastPlanHeading(workoutPlan)}</div>
                 <div>{getPastPlan(workoutPlan, true)}</div>
                 <Buttons>
-                  <StartStopButton
-                    control="start"
-                    label={urlRoute}
-                    onClick={() =>
-                      setCurrentPlan(getPastPlan(workoutPlan, false))
-                    }
-                  />
                   <Link to={`/new-workout/${urlRoute}`}>
                     <EditButton
                       onClick={() =>
                         setCurrentPlan(getPastPlan(workoutPlan, false))
                       }
                     >
-                      Edit
+                      Review and Begin
                     </EditButton>
                   </Link>
                 </Buttons>

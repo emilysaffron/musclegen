@@ -13,7 +13,7 @@ const NewWorkout = () => {
   setCurrentPlan(null);
   return (
     <StyledMenu>
-      <Menu labels={["Upper Body", "Lower Body"]} dropdown={false} />
+      <Menu options={["Upper Body", "Lower Body"]} dropdown={false} />
     </StyledMenu>
   );
 };

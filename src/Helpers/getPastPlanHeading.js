@@ -14,7 +14,7 @@ const getPastPlanHeading = (workoutPlan) => {
   let keys = "";
   let exercise = workoutPlan[0];
 
-  targetArea = exercise.label;
+  targetArea = exercise.bodyTarget;
   date = exercise.date;
   return (
     <StyledHeading key={keys}>

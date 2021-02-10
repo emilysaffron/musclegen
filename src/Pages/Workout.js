@@ -53,8 +53,8 @@ const FinishedButton = styled.img`
   cursor: pointer;
 `;
 
-const Workout = ({ label }) => {
-  const labelWithoutWhitespace = label.replace(/\s+/g, "-");
+const Workout = ({ bodyTarget }) => {
+  const bodyTargetWithoutWhitespace = bodyTarget.replace(/\s+/g, "-");
   const { currentPlan, setCurrentPlan } = useContext(CurrentPlanContext);
   const [currentExerciseNumber, switchCurrentExerciseNumber] = useState(0);
   const [maxExerciseNumber, updateMaxExerciseNumber] = useState(0);
@@ -63,12 +63,13 @@ const Workout = ({ label }) => {
   const [quitCurrentWorkout, toggleQuitCurrentWorkout] = useState(false);
   useEffect(() => {
     if (currentPlan) {
+      console.log(currentPlan);
       setCurrentPlan(
         MakeObjects(
           currentPlan,
           updateMaxExerciseNumber,
           updateFilledPlan,
-          label
+          bodyTarget
         )
       );
     }
@@ -123,7 +124,7 @@ const Workout = ({ label }) => {
     <StyledPage>
       <Display>
         <Quit>
-          <Link to={`${labelWithoutWhitespace.toLowerCase()}`}>
+          <Link to={`${bodyTargetWithoutWhitespace.toLowerCase()}`}>
             <img width="40px" src={quit} alt="quit" />
           </Link>
         </Quit>

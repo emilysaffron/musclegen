@@ -3,7 +3,7 @@ import MenuButton from "./MenuButton";
 
 it("MenuButton Snapshot", () => {
   const tree = renderer
-    .create(<MenuButton label="label" dropdown={false} />)
+    .create(<MenuButton option="option" dropdown={false} />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

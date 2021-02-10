@@ -1,6 +1,6 @@
 import FetchBodyHalf from "../Helpers/FetchBodyHalf/FetchBodyHalf";
+import ConvertBodyTarget from "../Helpers/ConvertBodyTarget/ConvertBodyTarget";
 import ExerciseModal from "../Components/ExerciseModal/ExerciseModal";
-import ConvertLabel from "../Helpers/ConvertLabel/ConvertLabel";
 import ExerciseList from "../Components/ExerciseList/ExerciseList";
 import WorkoutPlan from "../Components/WorkoutPlan/WorkoutPlan";
 import styled from "@emotion/styled";
@@ -13,9 +13,9 @@ const StyledPage = styled.div`
   justify-content: center;
 `;
 
-const WorkoutBuilder = ({ label }) => {
+const WorkoutBuilder = ({ bodyTarget }) => {
   const { currentPlan } = useContext(CurrentPlanContext);
-  const half = ConvertLabel(label);
+  const half = ConvertBodyTarget(bodyTarget);
   const [filteredExercises, fetchFilteredExercises] = useState("");
   const [modal, toggleModal] = useState(false);
   const [chosenExercise, updateChosenExercise] = useState("");
@@ -64,7 +64,7 @@ const WorkoutBuilder = ({ label }) => {
       />
 
       <WorkoutPlan
-        label={label}
+        bodyTarget={bodyTarget}
         workoutPlan={workoutPlan}
         AddToWorkoutPlan={AddToWorkoutPlan}
         CurrentItem={CurrentItem}

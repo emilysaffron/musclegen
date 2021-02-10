@@ -8,8 +8,8 @@ const ControlButton = styled.button`
   cursor: pointer;
 `;
 
-const StartStopButton = ({ control, label, onClick }) => {
-  const labelWithoutWhitespace = label.replace(/\s+/g, "-");
+const StartStopButton = ({ control, urlRoute, onClick }) => {
+  const url = urlRoute.replace(/\s+/g, "-");
   if (control === "start") {
     return (
       <Link to={`workout`}>
@@ -20,7 +20,7 @@ const StartStopButton = ({ control, label, onClick }) => {
 
   if (control === "stop") {
     return (
-      <Link to={`${labelWithoutWhitespace.toLowerCase()}`}>
+      <Link to={`${url.toLowerCase()}`}>
         <ControlButton onClick={onClick}>Stop</ControlButton>
       </Link>
     );

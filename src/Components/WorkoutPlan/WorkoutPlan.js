@@ -43,9 +43,8 @@ const StyledHeading = styled.li`
 `;
 
 const WorkoutPlan = ({
-  label,
+  bodyTarget,
   workoutPlan,
-  AddToWorkoutPlan,
   CurrentItem,
   SelectExercise,
   ToggleEdit,
@@ -85,13 +84,13 @@ const WorkoutPlan = ({
 
   return (
     <StyledPlan>
-      <StyledHeading>{label} Plan</StyledHeading>
+      <StyledHeading>{bodyTarget} Plan</StyledHeading>
 
       {items}
 
       <StartStopButton
         control="start"
-        label={label}
+        urlRoute={bodyTarget}
         onClick={() => setCurrentPlan(workoutPlan)}
       />
     </StyledPlan>

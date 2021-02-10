@@ -15,18 +15,18 @@ const StyledFilter = styled.button`
 
 const getExerciseTargets = (filterExercises, half) => {
   let exercises = FetchBodyHalf(half);
-  let labelsSoFar = [];
+  let targetsSoFar = [];
 
   return exercises.map((item) => {
-    let label = item.model.target;
-    if (labelsSoFar.indexOf(label) === -1) {
-      labelsSoFar.push(label);
+    let target = item.model.target;
+    if (targetsSoFar.indexOf(target) === -1) {
+      targetsSoFar.push(target);
       return (
         <StyledFilter
           key={Math.random()}
-          onClick={() => filterExercises(label)}
+          onClick={() => filterExercises(target)}
         >
-          {label}
+          {target}
         </StyledFilter>
       );
     }
