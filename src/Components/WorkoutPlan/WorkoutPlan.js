@@ -53,7 +53,7 @@ const WorkoutPlan = ({
   updateItems,
   items,
 }) => {
-  const { currentPlan, setCurrentPlan } = useContext(CurrentPlanContext);
+  const { setCurrentPlan } = useContext(CurrentPlanContext);
   const Edit = (item) => {
     CurrentItem(item);
     let words = item.split(" ");
