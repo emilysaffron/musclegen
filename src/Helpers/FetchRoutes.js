@@ -39,6 +39,7 @@ const fetchRoutes = () => {
         <Redirect noThrow from="/home" to={"/"} />
       </Router>
       <Router>
+        {/* Redirects probabyl show the logic is borked somewhere. */}
         <Redirect
           noThrow
           from="/new-workout/upper-body/workout/upperbody"

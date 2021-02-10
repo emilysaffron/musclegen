@@ -8,21 +8,19 @@ const StyledHeading = styled.li`
   padding: 15px;
 `;
 
-const getPastPlanLabel = (value, styled) => {
-  let label = "";
+const getPastPlanHeading = (workoutPlan) => {
+  let targetArea = "";
   let date = "";
   let keys = "";
-  let item = value[0];
+  let exercise = workoutPlan[0];
 
-  label = item.label;
-  date = item.date;
-  return styled ? (
+  targetArea = exercise.label;
+  date = exercise.date;
+  return (
     <StyledHeading key={keys}>
-      {label} - on {date}
+      {targetArea} - on {date}
     </StyledHeading>
-  ) : (
-    label
   );
 };
 
-export default getPastPlanLabel;
+export default getPastPlanHeading;

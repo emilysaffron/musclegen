@@ -1,11 +1,11 @@
-import getUserData from "../Helpers/getUserData";
 import { useState, useEffect, useContext } from "react";
 import getPastPlan from "../Helpers/getPastPlan";
 import styled from "@emotion/styled";
-import getPastPlanLabel from "../Helpers/getPastPlanLabel";
+import getPastPlanHeading from "../Helpers/getPastPlanHeading";
 import { CurrentPlanContext } from "../Helpers/CurrentPlanContext";
 import StartStopButton from "../Components/StartStopButton/StartStopButton";
 import { Link } from "@reach/router";
+import Firebase from "firebase";
 
 const StyledPage = styled.div`
   display: flex;
@@ -40,60 +40,78 @@ const EditButton = styled.button`
   margin-left: 5px;
 `;
 
-const PastWorkouts = ({ label }) => {
+const PastWorkouts = () => {
   const { setCurrentPlan } = useContext(CurrentPlanContext);
 
   const [pastWorkouts, updatePastWorkouts] = useState([]);
-  const [fetched, dataIsFetched] = useState(false);
+  // getState/ setState naming mismat
+  const [dataIsFetched, updateDataIsFetched] = useState(false);
+  const [response, updateResponse] = useState("");
+  const getUserData = (dataIsFetched) => {
+    let ref = Firebase.database().ref("/");
+    ref.on("value", (snapshot) => {
+      updateResponse(snapshot.val());
+      updateDataIsFetched(true);
+    });
+  };
+
   useEffect(() => {
-    const response = getUserData(dataIsFetched);
+    getUserData();
     if (response) {
       updatePastWorkouts(response);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [fetched]);
+  }, [dataIsFetched]);
 
-  return fetched ? (
-    <StyledPage>
-      {pastWorkouts.length !== 0 ? (
-        Object.keys(pastWorkouts).map((key) => {
-          const value = pastWorkouts[key];
-          let label = getPastPlanLabel(value, false);
+  return (
+    dataIsFetched && (
+      <StyledPage>
+        {pastWorkouts.length !== 0 ? (
+          // Logic quite complicated, but maybe it has to be.
+          // Let's add some fixture data, capturing locally what the db returns, and some tests for this function to see how it may be improved.
+          // This will mean breaking the function out of the return and into its own named arrow function
+          Object.keys(pastWorkouts).map((index) => {
+            const workoutPlan = pastWorkouts[index];
+            let exercise = workoutPlan[0];
+            let urlRoute = exercise.label;
 
-          if (label === "UpperBody") {
-            label = "upper-body";
-          }
-          if (label === "LowerBody") {
-            label = "lower-body";
-          }
+            if (urlRoute === "UpperBody") {
+              urlRoute = "upper-body";
+            }
+            if (urlRoute === "LowerBody") {
+              urlRoute = "lower-body";
+            }
 
-          return (
-            <StyledPlan key={key + 2}>
-              <div> {getPastPlanLabel(value, true)}</div>
-              <div>{getPastPlan(value, true)}</div>
-              <Buttons>
-                <StartStopButton
-                  control="start"
-                  label={label}
-                  onClick={() => setCurrentPlan(getPastPlan(value, false))}
-                />
-                <Link to={`/new-workout/${label}`}>
-                  <EditButton
-                    onClick={() => setCurrentPlan(getPastPlan(value, false))}
-                  >
-                    Edit
-                  </EditButton>
-                </Link>
-              </Buttons>
-            </StyledPlan>
-          );
-        })
-      ) : (
-        <>No Workouts Recorded</>
-      )}
-    </StyledPage>
-  ) : (
-    <StyledPage>loading...</StyledPage>
+            return (
+              <StyledPlan key={Math.random()}>
+                <div> {getPastPlanHeading(workoutPlan)}</div>
+                <div>{getPastPlan(workoutPlan, true)}</div>
+                <Buttons>
+                  <StartStopButton
+                    control="start"
+                    label={urlRoute}
+                    onClick={() =>
+                      setCurrentPlan(getPastPlan(workoutPlan, false))
+                    }
+                  />
+                  <Link to={`/new-workout/${urlRoute}`}>
+                    <EditButton
+                      onClick={() =>
+                        setCurrentPlan(getPastPlan(workoutPlan, false))
+                      }
+                    >
+                      Edit
+                    </EditButton>
+                  </Link>
+                </Buttons>
+              </StyledPlan>
+            );
+          })
+        ) : (
+          <>No Workouts Recorded</>
+        )}
+      </StyledPage>
+    )
   );
 };
 

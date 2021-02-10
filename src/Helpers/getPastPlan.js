@@ -10,34 +10,26 @@ const StyledItems = styled.li`
   flex-direction: column;
   padding: 8px;
 `;
-const StyledHeading = styled.li`
-  list-style: none;
-  align-items: center;
-  text-decoration: underline;
-  padding: 15px;
-`;
 
-const getPastPlan = (value, styled) => {
+const getPastPlan = (workoutPlan, styled) => {
   return styled ? (
     <div>
-      {Object.keys(value).map((key) => {
-        const item = value[key];
-        <StyledHeading key={key + 3}> {item.label}Plan</StyledHeading>;
+      {Object.keys(workoutPlan).map((index) => {
+        const exercise = workoutPlan[index];
 
         return (
           <div key={Math.random()}>
-            <StyledItems key={key}>
-              {item.name} for {item.reps} reps
+            <StyledItems key={Math.random()}>
+              {exercise.name} for {exercise.reps} reps
             </StyledItems>
           </div>
         );
       })}
     </div>
   ) : (
-    Object.keys(value).map((key) => {
-      const item = value[key];
-
-      let plan = item.name + " for " + item.reps + " reps ";
+    Object.keys(workoutPlan).map((index) => {
+      const exercise = workoutPlan[index];
+      let plan = exercise.name + " for " + exercise.reps + " reps ";
       return plan;
     })
   );
