@@ -7,7 +7,7 @@ const StyledModal = styled.div`
   flex-direction: column;
   text-align: left;
   z-index: 100;
-  @media (max-width: 380px) {
+  @media (max-width: 400px) {
     background-color: rgb(242, 242, 242, 0.9);
     text-align: center;
     height: 100%;
