@@ -11,6 +11,11 @@ const StyledModal = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media (max-width: 400px) {
+    width: 100%;
+    position: sticky;
+    top: 1rem;
+  }
 `;
 const StyledButton = styled.button`
   border-radius: 20px;

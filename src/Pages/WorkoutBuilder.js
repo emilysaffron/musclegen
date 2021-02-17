@@ -11,6 +11,9 @@ import { CurrentPlanContext } from "../Helpers/CurrentPlanContext";
 const StyledPage = styled.div`
   display: flex;
   justify-content: center;
+  @media (max-width: 400px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const WorkoutBuilder = ({ bodyTarget }) => {
@@ -28,7 +31,6 @@ const WorkoutBuilder = ({ bodyTarget }) => {
   useEffect(() => {
     fetchFilteredExercises(FetchBodyHalf(half));
     if (currentPlan) {
-      console.log("HI " + currentPlan);
       AddToWorkoutPlan(currentPlan);
     }
   }, [currentPlan, half]);
@@ -62,7 +64,6 @@ const WorkoutBuilder = ({ bodyTarget }) => {
         workoutPlan={workoutPlan}
         currentRepNumber={0}
       />
-
       <WorkoutPlan
         bodyTarget={bodyTarget}
         workoutPlan={workoutPlan}

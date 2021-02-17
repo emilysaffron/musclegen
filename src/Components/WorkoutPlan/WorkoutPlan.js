@@ -18,7 +18,10 @@ const StyledPlan = styled.ul`
   border: 2px solid black;
   position: -webkit-sticky;
   position: sticky;
-  top: 1rem;
+  top: 2rem;
+  @media (max-width: 400px) {
+    width: 80%;
+  }
 `;
 
 const StyledItems = styled.li`

@@ -24,6 +24,7 @@ const OpenMenu = styled.div`
   align-self: baseline;
   align-items: center;
   flex-direction: column;
+  z-index: 100;
 `;
 
 const DropDownNav = () => {

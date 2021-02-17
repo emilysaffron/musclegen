@@ -18,6 +18,9 @@ const StyledModal = styled.div`
   position: -webkit-sticky;
   position: sticky;
   top: 1rem;
+  @media (max-width: 400px) {
+    display: none;
+  }
 `;
 const OpenButton = styled.button`
   background: #cea8bb;
@@ -36,6 +39,9 @@ const OpenButton = styled.button`
   top: 1rem;
   border-radius: 20px;
   cursor: pointer;
+  @media (max-width: 400px) {
+    display: none;
+  }
 `;
 const ClearFilter = styled.button`
   display: flex;
@@ -49,7 +55,7 @@ const ClearFilter = styled.button`
   cursor: pointer;
 `;
 
-const FilterModal = (filterExercises, half) => {
+const FilterModal = ({ filterExercises, half }) => {
   const [filterState, toggleFilterState] = useState(false);
 
   return filterState ? (

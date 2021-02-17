@@ -11,6 +11,9 @@ const StyledExercise = styled.button`
   width: 385px;
   height: 50px;
   cursor: pointer;
+  @media (max-width: 400px) {
+    width: 100%;
+  }
 `;
 
 const Exercise = ({

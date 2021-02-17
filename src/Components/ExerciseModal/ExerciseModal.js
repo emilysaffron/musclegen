@@ -7,12 +7,19 @@ const StyledModal = styled.div`
   height: 600px;
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
-  position: fixed;
+  @media (min-width: 400px) {
+    position: fixed;
+  }
   z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media (max-width: 400px) {
+    width: 100%;
+    position: sticky;
+    top: 1rem;
+  }
 `;
 
 const ExerciseModal = ({

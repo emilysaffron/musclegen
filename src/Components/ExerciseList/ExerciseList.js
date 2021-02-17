@@ -8,6 +8,9 @@ const StyledList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 400px) {
+    width: 100%;
+  }
 `;
 const StyledContent = styled.div`
   display: flex;
@@ -38,7 +41,7 @@ const ExerciseList = ({
 
   return (
     <StyledContent>
-      {FilterModal(filterExercises, half)}
+      <FilterModal filterExercises={filterExercises} half={half} />
       <StyledList>{names}</StyledList>
     </StyledContent>
   );
