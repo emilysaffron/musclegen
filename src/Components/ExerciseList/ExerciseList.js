@@ -8,12 +8,19 @@ const StyledList = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media (max-width: 400px) {
-    width: 100%;
-  }
 `;
 const StyledContent = styled.div`
   display: flex;
+  @media (max-width: 400px) {
+    flex-direction: column;
+  }
+`;
+
+const StyledFilter = styled.div`
+  @media (max-width: 400px) {
+    position: fixed;
+    width: 80%;
+  }
 `;
 const ExerciseList = ({
   exercises,
@@ -41,7 +48,10 @@ const ExerciseList = ({
 
   return (
     <StyledContent>
-      <FilterModal filterExercises={filterExercises} half={half} />
+      <StyledFilter>
+        <FilterModal filterExercises={filterExercises} half={half} />
+      </StyledFilter>
+      <br />
       <StyledList>{names}</StyledList>
     </StyledContent>
   );
