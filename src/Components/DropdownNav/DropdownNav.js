@@ -37,11 +37,12 @@ const DropDownNav = () => {
       >
         X
       </div>
-
-      <Menu
-        options={["Home", "New Workout", "Past Workouts", "Videos"]}
-        dropdown={true}
-      />
+      <div onClick={() => toggleNavState(!navState)}>
+        <Menu
+          options={["Home", "New Workout", "Past Workouts", "Videos"]}
+          dropdown={true}
+        />
+      </div>
     </StyledModal>
   ) : (
     <OpenMenu onClick={() => toggleNavState(!navState)}>OPTIONS</OpenMenu>

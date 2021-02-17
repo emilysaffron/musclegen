@@ -7,7 +7,7 @@ const StyledButtons = styled.div`
   justify-content: center;
 `;
 
-const Menu = ({ options, dropdown}) => {
+const Menu = ({ options, dropdown }) => {
   const GetMenuButtons = (options, dropdown) => {
     return options.map((item) => (
       <MenuButton option={item} key={item} dropdown={dropdown} />
