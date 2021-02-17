@@ -11,6 +11,7 @@ import { CurrentPlanContext } from "../Helpers/CurrentPlanContext";
 const StyledPage = styled.div`
   display: flex;
   justify-content: center;
+  padding: 5px;
   @media (max-width: 400px) {
     flex-direction: column-reverse;
   }
