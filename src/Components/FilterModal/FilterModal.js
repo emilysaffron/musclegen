@@ -19,7 +19,6 @@ const StyledModal = styled.div`
   position: sticky;
   top: 1rem;
   @media (max-width: 400px) {
-    z-index: 100;
     width: 300px;
     margin-left: 50px;
     height: 200px;

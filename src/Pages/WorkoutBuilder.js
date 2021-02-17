@@ -44,6 +44,18 @@ const WorkoutBuilder = ({ bodyTarget }) => {
         updateChosenExercise={updateChosenExercise}
         half={half}
       />
+
+      <WorkoutPlan
+        bodyTarget={bodyTarget}
+        workoutPlan={workoutPlan}
+        AddToWorkoutPlan={AddToWorkoutPlan}
+        CurrentItem={CurrentItem}
+        SelectExercise={SelectExercise}
+        ToggleEdit={ToggleEdit}
+        edit={edit}
+        updateItems={updateItems}
+        items={items}
+      />
       <EditExerciseModal
         modal={edit}
         exercise={Exercise}
@@ -63,17 +75,6 @@ const WorkoutBuilder = ({ bodyTarget }) => {
         AddToWorkoutPlan={AddToWorkoutPlan}
         workoutPlan={workoutPlan}
         currentRepNumber={0}
-      />
-      <WorkoutPlan
-        bodyTarget={bodyTarget}
-        workoutPlan={workoutPlan}
-        AddToWorkoutPlan={AddToWorkoutPlan}
-        CurrentItem={CurrentItem}
-        SelectExercise={SelectExercise}
-        ToggleEdit={ToggleEdit}
-        edit={edit}
-        updateItems={updateItems}
-        items={items}
       />
     </StyledPage>
   );

@@ -30,7 +30,7 @@ const StyledItems = styled.li`
   font-size: 12px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  text-align: left;
+  text-align: center;
   display: flex;
   flex-direction: column;
   padding: 8px;

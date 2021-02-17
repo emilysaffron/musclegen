@@ -3,8 +3,8 @@ import RepCounter from "../RepCounter/RepCounter";
 import Confirmation from "../Confirmation/Confirmation";
 import { useState } from "react";
 const StyledModal = styled.div`
-  width: 600px;
-  height: 600px;
+  width: 400px;
+  height: 400px;
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
   @media (min-width: 400px) {
@@ -18,7 +18,7 @@ const StyledModal = styled.div`
   @media (max-width: 400px) {
     width: 100%;
     position: sticky;
-    top: 1rem;
+    top: 2rem;
   }
 `;
 
