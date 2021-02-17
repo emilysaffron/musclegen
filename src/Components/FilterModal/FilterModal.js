@@ -43,7 +43,6 @@ const OpenButton = styled.button`
   border-radius: 20px;
   cursor: pointer;
   @media (max-width: 400px) {
-    z-index: 100;
     width: 100%;
     margin-left: 50px;
   }
