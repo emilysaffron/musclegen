@@ -20,8 +20,9 @@ const StyledModal = styled.div`
   top: 1rem;
   @media (max-width: 400px) {
     z-index: 100;
-    width: 80%;
+    width: 300px;
     margin-left: 50px;
+    height: 200px;
   }
 `;
 
@@ -69,10 +70,10 @@ const FilterModal = ({ filterExercises, half }) => {
       key={Math.random()}
       onClick={() => toggleFilterState(!filterState)}
     >
-      {getExerciseTargets(filterExercises, half)}
       <ClearFilter key={Math.random()} onClick={() => filterExercises("")}>
         Clear Filter
       </ClearFilter>
+      {getExerciseTargets(filterExercises, half)}
     </StyledModal>
   ) : (
     <OpenButton onClick={() => toggleFilterState(!filterState)}>
