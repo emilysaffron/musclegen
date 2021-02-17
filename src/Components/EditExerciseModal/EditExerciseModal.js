@@ -25,6 +25,7 @@ const StyledButton = styled.button`
   margin: 10px;
   cursor: pointer;
   outline: none;
+  background: white;
 `;
 const StyledCancelButton = styled.button`
   border-radius: 20px;

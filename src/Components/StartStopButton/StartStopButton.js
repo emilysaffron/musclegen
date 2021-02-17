@@ -6,6 +6,7 @@ const ControlButton = styled.button`
   height: 25px;
   border-radius: 50%;
   cursor: pointer;
+  background-color: white;
 `;
 
 const StartStopButton = ({ control, urlRoute, onClick }) => {

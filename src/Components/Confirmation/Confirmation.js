@@ -8,6 +8,7 @@ const StyledButton = styled.button`
   margin: 10px;
   cursor: pointer;
   outline: none;
+  background: white;
 `;
 
 const ButtonsContainer = styled.div`
