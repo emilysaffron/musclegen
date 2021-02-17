@@ -18,7 +18,6 @@ const StyledContent = styled.div`
 
 const StyledFilter = styled.div`
   @media (max-width: 400px) {
-    position: fixed;
     width: 80%;
   }
 `;

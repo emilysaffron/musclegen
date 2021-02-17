@@ -21,6 +21,7 @@ const StyledPlan = styled.ul`
   top: 2rem;
   @media (max-width: 400px) {
     width: 80%;
+    position: static;
   }
 `;
 
